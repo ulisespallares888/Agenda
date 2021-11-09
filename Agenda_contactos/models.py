@@ -7,7 +7,6 @@ class usuario(models.Model):
 
     def __str__(self):
         cadena = "{0}"
-        print("sdf")
         return cadena.format(self.nombre)
 
 class contacto(models.Model):
