@@ -14,16 +14,17 @@ def iniciar_sesion(request):
     nombre_usuario = request.POST['txtusuario']
     password = request.POST['txtpassword']
     usuario_sesion = usuario.objects.filter(nombre=nombre_usuario, password=password)
-    global session
-    session = usuario_sesion[0]
+    
     if len(usuario_sesion) == 0:
-        texto = 'El usuario o contraseña incorrecta'
+        texto = 'El usuario y/o contraseña son incorrectas'
         messages.warning(request, texto)
     else:
+        global session
+        session = usuario_sesion[0]
         texto = 'Bienvenido {}'
         messages.success(request, texto.format(session.nombre))
         return redirect('/')
-    return redirect('/')
+    return redirect("index")
     
 
 def registrarse(request):
