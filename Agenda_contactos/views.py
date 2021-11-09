@@ -1,30 +1,29 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
-from django.views.generic import ListView
 from .models import contacto,usuario
 from django.contrib import messages
 
-session_id = None
-print("seccion antes de crearse",session_id)
+session=usuario()
+
 
 def index(request):
     return render(request,"index.html")
 
 def iniciar_sesion(request):
      
-    email = request.POST['txtemail']
+    nombre_usuario = request.POST['txtusuario']
     password = request.POST['txtpassword']
-    usuario_sesion = usuario.objects.filter(email=email, password=password)
+    usuario_sesion = usuario.objects.filter(nombre=nombre_usuario, password=password)
+    global session
+    session = usuario_sesion[0]
     if len(usuario_sesion) == 0:
-        texto = 'El usuario no existe'
-
+        texto = 'El usuario o contraseña incorrecta'
         messages.warning(request, texto)
     else:
-        session = usuario_sesion[0]
         texto = 'Bienvenido {}'
         messages.success(request, texto.format(session.nombre))
         return redirect('/')
-    return redirect('index/')
+    return redirect('/')
     
 
 def registrarse(request):
@@ -51,9 +50,9 @@ def registrarse(request):
 def home(request):
     nombrebus = request.GET.get('txtbuscar', False)
     if nombrebus == False:
-        contactosEncontrados = contacto.objects.filter(usuario_id = 6 ).order_by('nombre')
+        contactosEncontrados = contacto.objects.filter(usuario_id = session.id ).order_by('nombre')
     else:
-        contactosEncontrados = contacto.objects.filter(nombre__contains=nombrebus, usuario_id = 1 ).order_by('nombre')  
+        contactosEncontrados = contacto.objects.filter(nombre__contains=nombrebus, usuario_id = session.id  ).order_by('nombre')  
         if len(contactosEncontrados) == 0:
             mensaje = nombrebus + ' no existe'
             messages.warning(request, mensaje)
@@ -70,8 +69,7 @@ def crearcontacto(request):
     if nombre == '' or apellido == '' or email == '' or telefono == 0:
         messages.warning(request, 'Existen campos vacios')
     else:
-        print("seccion antes de asignarse",session_id)
-        contacto_nuevo = contacto.objects.create(nombre=nombre, apellido=apellido, telefono=telefono, email=email, usuario_id=6)
+        contacto_nuevo = contacto.objects.create(nombre=nombre, apellido=apellido, telefono=telefono, email=email, usuario_id=session.id)
         texto = '{} ha sido creado'
         messages.success(request, texto.format(nombre))
         
