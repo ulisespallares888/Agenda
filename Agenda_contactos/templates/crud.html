@@ -1,0 +1,113 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+<div class="row">
+   <div class="col-sm-12 col-md-6 col-lg-4 col-xl-4">
+     
+    <br>
+    <h3 style="text-align:center;" >Agregar contacto</h3>
+    <div class="card">
+        
+        <div class="card-body">
+            <form action="crearcontacto/" method="POST"> {% csrf_token %}
+                <div class="form-gourp">
+                    <input type="text" placeholder="Nombre" id="txtnombre" name="txtnombre" class="form-control" minlength="1" maxlength="50">
+                </div>
+                <br>
+                <div class="form-gourp">
+                    <input type="text" placeholder="Apellido" id="txtapellido" name="txtapellido" class="form-control" minlength="1" maxlength="50">
+                </div>
+                <br>
+                <div class="form-gourp">
+                <input type="number" placeholder="123456" id="txttelefono" name="txttelefono" class="form-control" minlength="10" maxlength="10">
+                </div>
+                <br>
+                <div class="form-gourp">
+                    <input type="email" placeholder="ejemplo@gmail.com" id="txtemail" name="txtemail" class="form-control" maxlength="254">
+                </div>
+                <br>
+                <div class="form-gourp">
+                    <button type="submit" class="btn btn-success btn-block text-white col-xl-12 " >
+                        Guardar
+                    </button>
+                </div>
+            </form>
+        </div>
+        
+    </div>
+    <br>
+    
+    <form action="/" method="GET"> {% csrf_token %}
+        <div class="btn-group " method="GET">
+            <input class="form-control col-xl-12 " id="txtbuscar" name="txtbuscar"  type="text" placeholder="Buscar" aria-label="Search">
+            <button class="btn btn-primary submit" >Buscar</button>
+       </div>
+    </form>
+
+    <br>
+
+    {% if messages %}
+    
+        {% for message in messages %}
+            {% if message.tags == 'warning' %}
+                <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                    <strong>{{ message }}</strong> 
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            {% else %}   
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    <strong>{{ message }}</strong> 
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            {% endif %}
+        {% endfor %}
+    {% endif %}  
+       
+</div>
+  
+  <br>
+   
+   <div class="col-sm-12 col-md-6 col-lg-8 col-xl-8" >
+       <div class="table-responsive" id="global" >
+        <br>
+           <table class="table table-striped  table-responsive " style="text-align:center;" id="mensajes">
+                <thead >
+                    <tr>
+                        <th>#</th>
+                        <th>Nombre</th>
+                        <th>Apellido</th>
+                        <th>Teléfono</th>
+                        <th>Email</th>
+                        <th colspan="2">Opciones</th>
+                    </tr>
+                </thead >
+                <tbody >
+                    {% for c in contacto %}
+                    <tr >
+                        <td>{{forloop.counter}}</td>
+                        <td>{{c.nombre}}</td>
+                        <td>{{c.apellido}}</td>
+                        <td>{{c.telefono}}</td>
+                        <td>{{c.email}}</td>
+                        <td><a href="edicioncontacto/{{c.id}}" class="btn btn-primary" >Editar</a></td>
+                        <td><a href="eliminarcontacto/{{c.id}}"class="btn btn-danger btnEliminacion"  >Eliminar</a></td>
+                    </tr>                   
+                    {% endfor %}
+                </tbody>
+
+                
+           </table>
+
+        </div>
+        
+        
+
+   </div>
+  </div>  
+</div>
+
+
+{% endblock %}
+

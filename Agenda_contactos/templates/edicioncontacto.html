@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-4 offset-md-4">
+        <br>
+        <h3  style="text-align:center;" >Editar contacto</h3>
+     <div class="card">
+        <div class="card-body">
+            <form action="/editarcontacto/{{id.id}}" method="POST"> {% csrf_token %}
+                <div class="form-gourp">
+                    <input type="text" placeholder="Nombre" id="txtnombre"  name="txtnombre" value="{{id.nombre}}" class="form-control" minlength="1" maxlength="50">
+                </div>
+                <br>
+                <div class="form-gourp">
+                    <input type="text" placeholder="Apellido" id="txtapellido"  name="txtapellido" value="{{id.apellido}}" class="form-control" minlength="1" maxlength="50">
+                </div>
+                <br>
+                <div class="form-gourp">
+                    <input type="number" placeholder="3624996633" id="txttelefono"  name="txttelefono" value="{{id.telefono}}" class="form-control" minlength="10" maxlength="10">
+                </div>
+                <br>
+                <div class="form-gourp">
+                    <input type="email" placeholder="ejemplo@gmail.com" id="txtemail"  name="txtemail" value="{{id.email}}" class="form-control" maxlength="254">
+                </div>
+                <br>
+                <div class="form-gourp">
+                    <button type="submit" class="btn btn-success btn-block text-white col-xl-12 " formnovalidate value="Save" >
+                        Actualizar
+                    </button>
+                </div>
+            </form>
+        </div>
+         
+     </div>   
+     <br>
+     {% if messages %}
+     {% for message in messages %}
+             <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                 <strong>{{ message }}</strong> 
+                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+             </div>
+     {% endfor %}
+    {% endif %} 
+    </div>
+
+</div>
+
+{% endblock %}
