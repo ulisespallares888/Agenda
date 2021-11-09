@@ -9,8 +9,20 @@ session=usuario()
 def index(request):
     return render(request,"index.html")
 
+
+def control():
+    if session == None:
+        return redirect('index')
+    pass
+
+
+def cerrarsession(request):
+    global session
+    session.id = None
+    return redirect("index")
+
+
 def iniciar_sesion(request):
-     
     nombre_usuario = request.POST['txtusuario']
     password = request.POST['txtpassword']
     usuario_sesion = usuario.objects.filter(nombre=nombre_usuario, password=password)
@@ -23,7 +35,7 @@ def iniciar_sesion(request):
         session = usuario_sesion[0]
         texto = 'Bienvenido {}'
         messages.success(request, texto.format(session.nombre))
-        return redirect('/')
+        return redirect('home')
     return redirect("index")
     
 
@@ -45,7 +57,7 @@ def registrarse(request):
         else:
             texto = 'Las contraseñas no coinciden'
             messages.error(request, texto.format(nombre))
-    return redirect('/')
+    return redirect('home')
     
 
 def home(request):
@@ -74,7 +86,7 @@ def crearcontacto(request):
         texto = '{} ha sido creado'
         messages.success(request, texto.format(nombre))
         
-    return redirect('/')
+    return redirect('home')
 
 
 def edicioncontacto(request,id):
@@ -101,7 +113,7 @@ def editarcontacto(request,id):
         contacto_edit.save()
         texto = '{} ha sido actualizado'
         messages.success(request, texto.format(contacto_edit.nombre))
-        return redirect('/')
+        return redirect('home')
 
 
 def eliminarcontacto(request,id):
@@ -109,7 +121,7 @@ def eliminarcontacto(request,id):
     contacto_elim.delete()
     texto = '{} ha sido eliminado'
     messages.success(request, texto.format(contacto_elim.nombre))
-    return redirect('/')
+    return redirect('home')
 
 
 
