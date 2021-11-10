@@ -7,9 +7,9 @@ urlpatterns = [
     path('registrarse/',views.registrarse),
     path('',views.index, name='index'),
     path('crearcontacto/',views.crearcontacto,name='crearcontacto'),
-    path('eliminarcontacto/<id>',views.eliminarcontacto,name='crearcontacto'),
-    path('edicioncontacto/<id>',views.edicioncontacto,name='crearcontacto'),
-    path('editarcontacto/<id>',views.editarcontacto,name='crearcontacto'),
+    path('eliminarcontacto/<id>',views.eliminarcontacto,name='eliminarcontacto'),
+    path('edicioncontacto/<id>',views.edicioncontacto,name='edicioncontacto'),
+    path('editarcontacto/<id>',views.editarcontacto,name='editarcontacto'),
     path('iniciar_sesion/',views.iniciar_sesion,name='iniciar_sesion/'),
     path('cerrarsession/',views.cerrarsession,name='cerrar_sesion'),
 

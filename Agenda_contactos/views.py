@@ -3,18 +3,10 @@ from django.http import HttpResponse
 from .models import contacto,usuario
 from django.contrib import messages
 
-session=0
+session=None
 
 
 def index(request):
-    return render(request,"index.html")
-
-
-def control(request):
-    if session != None:
-        return render(request,"index.html")
-    print("sale por index")
-    print(session)
     return render(request,"index.html")
 
 
@@ -35,10 +27,10 @@ def iniciar_sesion(request):
     else:
         global session
         session = usuario_sesion[0].id
+        print(session)
         texto = 'Bienvenido {}'
         messages.success(request, texto.format(usuario_sesion[0].nombre))
         return redirect('home')
-    return redirect("index")
     
 
 def registrarse(request):
@@ -63,7 +55,8 @@ def registrarse(request):
     
 
 def home(request):
-    control(request)
+    if session == None:
+        return redirect("index")
     nombrebus = request.GET.get('txtbuscar', False)
     if nombrebus == False:
         contactosEncontrados = contacto.objects.filter(usuario_id = session ).order_by('nombre')
@@ -77,6 +70,8 @@ def home(request):
 
 
 def crearcontacto(request):
+    if session == None:
+        return redirect('index')
     nombre = request.POST['txtnombre'].capitalize()
     apellido = request.POST['txtapellido'].capitalize()
     telefono = request.POST['txttelefono']
@@ -93,10 +88,16 @@ def crearcontacto(request):
 
 
 def edicioncontacto(request,id):
+    if session == None:
+        return redirect('index')
+
     contacto_edit = contacto.objects.get(id=id)
     return render(request,"edicioncontacto.html",{"id": contacto_edit})
 
 def editarcontacto(request,id):
+    if session == None:
+        return redirect('index')
+
     nombre = request.POST['txtnombre'].capitalize()
     apellido = request.POST['txtapellido'].capitalize()
     telefono = request.POST['txttelefono']
@@ -120,6 +121,9 @@ def editarcontacto(request,id):
 
 
 def eliminarcontacto(request,id):
+    if session == None:
+        return redirect('index')
+
     contacto_elim = contacto.objects.get(id=id)
     contacto_elim.delete()
     texto = '{} ha sido eliminado'
