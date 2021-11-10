@@ -5,7 +5,6 @@ from django.contrib import messages
 
 session=None
 
-
 def index(request):
     return render(request,"index.html")
 
@@ -16,7 +15,7 @@ def cerrarsession(request):
     return redirect("index")
 
 
-def iniciar_sesion(request):
+def iniciar_sesion(request):    
     nombre_usuario = request.POST['txtusuario']
     password = request.POST['txtpassword']
     usuario_sesion = usuario.objects.filter(nombre=nombre_usuario, password=password)
@@ -27,13 +26,13 @@ def iniciar_sesion(request):
     else:
         global session
         session = usuario_sesion[0].id
-        print(session)
         texto = 'Bienvenido {}'
         messages.success(request, texto.format(usuario_sesion[0].nombre))
-        return redirect('home')
+    return redirect('home')
     
 
 def registrarse(request):
+
     nombre = request.POST['txtnombre']
     email = request.POST['txtemail']
     password = request.POST['txtpassword']
@@ -55,8 +54,10 @@ def registrarse(request):
     
 
 def home(request):
+
     if session == None:
         return redirect("index")
+
     nombrebus = request.GET.get('txtbuscar', False)
     if nombrebus == False:
         contactosEncontrados = contacto.objects.filter(usuario_id = session ).order_by('nombre')
