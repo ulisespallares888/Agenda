@@ -3,22 +3,24 @@ from django.http import HttpResponse
 from .models import contacto,usuario
 from django.contrib import messages
 
-session=usuario()
+session=0
 
 
 def index(request):
     return render(request,"index.html")
 
 
-def control():
-    if session == None:
-        return redirect('index')
-    pass
+def control(request):
+    if session != None:
+        return render(request,"index.html")
+    print("sale por index")
+    print(session)
+    return render(request,"index.html")
 
 
 def cerrarsession(request):
     global session
-    session.id = None
+    session = None
     return redirect("index")
 
 
@@ -32,9 +34,9 @@ def iniciar_sesion(request):
         messages.warning(request, texto)
     else:
         global session
-        session = usuario_sesion[0]
+        session = usuario_sesion[0].id
         texto = 'Bienvenido {}'
-        messages.success(request, texto.format(session.nombre))
+        messages.success(request, texto.format(usuario_sesion[0].nombre))
         return redirect('home')
     return redirect("index")
     
@@ -61,11 +63,12 @@ def registrarse(request):
     
 
 def home(request):
+    control(request)
     nombrebus = request.GET.get('txtbuscar', False)
     if nombrebus == False:
-        contactosEncontrados = contacto.objects.filter(usuario_id = session.id ).order_by('nombre')
+        contactosEncontrados = contacto.objects.filter(usuario_id = session ).order_by('nombre')
     else:
-        contactosEncontrados = contacto.objects.filter(nombre__contains=nombrebus, usuario_id = session.id  ).order_by('nombre')  
+        contactosEncontrados = contacto.objects.filter(nombre__contains=nombrebus, usuario_id = session ).order_by('nombre')  
         if len(contactosEncontrados) == 0:
             mensaje = nombrebus + ' no existe'
             messages.warning(request, mensaje)
@@ -82,7 +85,7 @@ def crearcontacto(request):
     if nombre == '' or apellido == '' or email == '' or telefono == 0:
         messages.warning(request, 'Existen campos vacios')
     else:
-        contacto_nuevo = contacto.objects.create(nombre=nombre, apellido=apellido, telefono=telefono, email=email, usuario_id=session.id)
+        contacto_nuevo = contacto.objects.create(nombre=nombre, apellido=apellido, telefono=telefono, email=email, usuario_id=session)
         texto = '{} ha sido creado'
         messages.success(request, texto.format(nombre))
         
