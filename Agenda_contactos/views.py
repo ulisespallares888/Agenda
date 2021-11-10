@@ -4,6 +4,7 @@ from .models import contacto,usuario
 from django.contrib import messages
 
 session=None
+session_home = None
 
 
 def index(request):
@@ -55,19 +56,20 @@ def registrarse(request):
     
 
 def home(request):
+    
     if session == None:
         return redirect("index")
-    print(session)
+
     nombrebus = request.GET.get('txtbuscar', False)
     if nombrebus == False:
         contactosEncontrados = contacto.objects.filter(usuario_id = session ).order_by('nombre')
-        print(session)
     else:
+        print(session)
         contactosEncontrados = contacto.objects.filter(nombre__contains=nombrebus, usuario_id = session ).order_by('nombre')  
         if len(contactosEncontrados) == 0:
             mensaje = nombrebus + ' no existe'
             messages.warning(request, mensaje)
-        print(session)
+    
     return render(request,"crud.html",{"contacto": contactosEncontrados})
     
 
