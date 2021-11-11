@@ -1,23 +1,25 @@
 from django.shortcuts import render, redirect
-from django.http import HttpResponse
-from .models import contacto,usuario
+from django.http import HttpResponse, request
+from django.forms import Form
+from django.contrib.auth.views import LoginView, LogoutView
 from django.contrib import messages
 
 session=None
 session_home = None
 
 
+
 def index(request):
     return render(request,"index.html")
 
 
-def cerrarsession(request):
+"""def cerrarsession(request):
     global session
     session = None
     return redirect("index")
+"""
 
-
-def iniciar_sesion(request):    
+"""def iniciar_sesion(request):    
     nombre_usuario = request.POST['txtusuario']
     password = request.POST['txtpassword']
     usuario_sesion = usuario.objects.filter(nombre=nombre_usuario, password=password)
@@ -30,7 +32,7 @@ def iniciar_sesion(request):
         session = usuario_sesion[0].id
         texto = 'Bienvenido {}'
         messages.success(request, texto.format(usuario_sesion[0].nombre))
-    return redirect('home')
+    return redirect('home')"""
     
 
 def registrarse(request):
@@ -57,8 +59,8 @@ def registrarse(request):
 
 def home(request):
     
-    if session == None:
-        return redirect("index")
+    """if session == None:
+        return redirect("index")"""
 
     nombrebus = request.GET.get('txtbuscar', False)
     if nombrebus == False:
@@ -75,8 +77,8 @@ def home(request):
 
 
 def crearcontacto(request):
-    if session == None:
-        return redirect('index')
+    """if session == None:
+        return redirect('index')"""
     nombre = request.POST['txtnombre'].capitalize()
     apellido = request.POST['txtapellido'].capitalize()
     telefono = request.POST['txttelefono']
