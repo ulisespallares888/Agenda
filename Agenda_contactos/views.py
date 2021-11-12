@@ -1,43 +1,23 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse, request
 from django.forms import Form
-from django.contrib.auth.views import LoginView, LogoutView
-from django.contrib import messages
-from models import usuario, contacto
+from django.contrib.auth.models import User, auth
 
-session=None
-session_home = None
+from django.contrib import messages
+from . models import usuario, contacto
+from django.contrib.auth.decorators import login_required
 
 
 
 def index(request):
-    return render(request,"index.html")
+    return redirect("accounts/login")
 
 
-"""def cerrarsession(request):
-    global session
-    session = None
-    return redirect("index")
-"""
-
-"""def iniciar_sesion(request):    
-    nombre_usuario = request.POST['txtusuario']
-    password = request.POST['txtpassword']
-    usuario_sesion = usuario.objects.filter(nombre=nombre_usuario, password=password)
-    
-    if len(usuario_sesion) == 0:
-        texto = 'El usuario y/o contraseña son incorrectas'
-        messages.warning(request, texto)
-    else:
-        global session
-        session = usuario_sesion[0].id
-        texto = 'Bienvenido {}'
-        messages.success(request, texto.format(usuario_sesion[0].nombre))
-    return redirect('home')"""
-    
+"""def cerrar_session(request):
+    return redirect("accounts/logout")"""
+ 
 
 def registrarse(request):
-
     nombre = request.POST['txtnombre']
     email = request.POST['txtemail']
     password = request.POST['txtpassword']
@@ -47,39 +27,32 @@ def registrarse(request):
         messages.warning(request, 'Existen campos vacios')
     else:
         if password == password2:
-            usuario_nuevo = usuario.objects.create(nombre=nombre, email=email, password=password)
+            usuario_nuevo = User.objects.create_user(nombre, email, password)
+            
             usuario_nuevo.save()
-            session = usuario_nuevo
-            texto = 'Bienvenido {}'
-            messages.success(request, texto.format(nombre))
+            mensaje = f'Bienvenido {usuario_nuevo.username}'
+            messages.success(request, mensaje)
         else:
-            texto = 'Las contraseñas no coinciden'
-            messages.error(request, texto.format(nombre))
+            mensaje = 'Las contraseñas no coinciden'
+            messages.error(request, mensaje)
     return redirect('home')
     
-
+@login_required
 def home(request):
-    
-    """if session == None:
-        return redirect("index")"""
-
     nombrebus = request.GET.get('txtbuscar', False)
     if nombrebus == False:
-        contactosEncontrados = contacto.objects.filter(usuario_id = session ).order_by('nombre')
+        contactosEncontrados = contacto.objects.filter(usuario_id = auth.get_user(request).id ).order_by('nombre')    
     else:
-        print(session)
-        contactosEncontrados = contacto.objects.filter(nombre__contains=nombrebus, usuario_id = session ).order_by('nombre')  
+        contactosEncontrados = contacto.objects.filter(nombre__contains=nombrebus, usuario_id = auth.get_user(request).id).order_by('nombre')  
         if len(contactosEncontrados) == 0:
             mensaje = nombrebus + ' no existe'
             messages.warning(request, mensaje)
-    
+        
     return render(request,"crud.html",{"contacto": contactosEncontrados})
     
 
-
+@login_required
 def crearcontacto(request):
-    """if session == None:
-        return redirect('index')"""
     nombre = request.POST['txtnombre'].capitalize()
     apellido = request.POST['txtapellido'].capitalize()
     telefono = request.POST['txttelefono']
@@ -88,24 +61,18 @@ def crearcontacto(request):
     if nombre == '' or apellido == '' or email == '' or telefono == 0:
         messages.warning(request, 'Existen campos vacios')
     else:
-        contacto_nuevo = contacto.objects.create(nombre=nombre, apellido=apellido, telefono=telefono, email=email, usuario_id=session)
+        contacto_nuevo = contacto.objects.create(nombre=nombre, apellido=apellido, telefono=telefono, email=email, usuario_id=auth.get_user(request).id)
         texto = '{} ha sido creado'
         messages.success(request, texto.format(nombre))
-        
     return redirect('home')
 
-
+@login_required
 def edicioncontacto(request,id):
-    if session == None:
-        return redirect('index')
-
     contacto_edit = contacto.objects.get(id=id)
     return render(request,"edicioncontacto.html",{"id": contacto_edit})
 
+@login_required
 def editarcontacto(request,id):
-    if session == None:
-        return redirect('index')
-
     nombre = request.POST['txtnombre'].capitalize()
     apellido = request.POST['txtapellido'].capitalize()
     telefono = request.POST['txttelefono']
@@ -127,11 +94,8 @@ def editarcontacto(request,id):
         messages.success(request, texto.format(contacto_edit.nombre))
         return redirect('home')
 
-
+@login_required
 def eliminarcontacto(request,id):
-    if session == None:
-        return redirect('index')
-
     contacto_elim = contacto.objects.get(id=id)
     contacto_elim.delete()
     texto = '{} ha sido eliminado'
