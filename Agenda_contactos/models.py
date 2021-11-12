@@ -1,5 +1,5 @@
 from django.db import models
-
+from django.contrib.auth.models import User
 
 class usuario(models.Model):
     nombre = models.CharField(max_length=50)
@@ -15,7 +15,7 @@ class contacto(models.Model):
     apellido = models.CharField(max_length=50)
     telefono = models.IntegerField()
     email = models.EmailField(max_length = 254)
-    usuario = models.ForeignKey(usuario, on_delete=models.CASCADE, default=None)
+    usuario = models.ForeignKey(User, on_delete=models.CASCADE)
 
     def __str__(self):
         cadena = "{0} {1} {2} {3} {4}"

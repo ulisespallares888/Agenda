@@ -83,10 +83,10 @@
                     <input type="password" placeholder="Contraseña" id="txtpassword" name="txtpassword" class="form-control" maxlength="254">
                     </div>
                     -->
-                    {{ form }}
+                    {{ form.as_p }}
                     <br>
                     <button type="submit" class="btn btn-success btn-block text-white col-xl-12 " >
-                        Aceptar
+                        Acceder
                     </button>
                     <br>
                     </form>
@@ -105,6 +105,11 @@
     {% for message in messages %}
         {% if message.tags == 'warning' %}
             <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                <strong>{{ message }}</strong> 
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        {% else %}
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
                 <strong>{{ message }}</strong> 
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>

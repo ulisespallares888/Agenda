@@ -23,19 +23,24 @@ def registrarse(request):
     password = request.POST['txtpassword']
     password2 = request.POST['txtpassword2']
 
-    if nombre == '' or email == '' or password == '' or password2 == '':
-        messages.warning(request, 'Existen campos vacios')
+    usename_exists = User.objects.filter(username=nombre).exists()
+
+    if usename_exists:
+        messages.warning(request, 'El usuario ya existe')
     else:
-        if password == password2:
-            usuario_nuevo = User.objects.create_user(nombre, email, password)
-            
-            usuario_nuevo.save()
-            mensaje = f'Bienvenido {usuario_nuevo.username}'
-            messages.success(request, mensaje)
+        if nombre == '' or email == '' or password == '' or password2 == '':
+            messages.warning(request, 'Existen campos vacios')
         else:
-            mensaje = 'Las contraseñas no coinciden'
-            messages.error(request, mensaje)
-    return redirect('home')
+            if password == password2:
+                usuario_nuevo = User.objects.create_user(nombre, email, password)
+                usuario_nuevo.save()
+                mensaje = f'Bienvenido {usuario_nuevo.username} ahora solo queda iniciar sesión'
+                messages.success(request, mensaje)
+                redirect('home')
+            else:
+                mensaje = 'Las contraseñas no coinciden'
+                messages.error(request, mensaje)
+    return redirect('index')
     
 @login_required
 def home(request):
@@ -61,7 +66,7 @@ def crearcontacto(request):
     if nombre == '' or apellido == '' or email == '' or telefono == 0:
         messages.warning(request, 'Existen campos vacios')
     else:
-        contacto_nuevo = contacto.objects.create(nombre=nombre, apellido=apellido, telefono=telefono, email=email, usuario_id=auth.get_user(request).id)
+        contacto_nuevo = contacto.objects.create(nombre=nombre, apellido=apellido, telefono=telefono, email=email, usuario_id=request.user.id)
         texto = '{} ha sido creado'
         messages.success(request, texto.format(nombre))
     return redirect('home')
