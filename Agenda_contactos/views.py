@@ -3,6 +3,7 @@ from django.http import HttpResponse, request
 from django.forms import Form
 from django.contrib.auth.views import LoginView, LogoutView
 from django.contrib import messages
+from models import usuario, contacto
 
 session=None
 session_home = None
