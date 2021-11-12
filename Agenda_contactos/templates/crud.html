@@ -6,7 +6,7 @@
 
 <div class="row">
    <div class="col-sm-12 col-md-6 col-lg-4 col-xl-4">
-        <h4>{{ user.username }} asdasd</h4>
+        <h4>{{ user.username }} </h4>
     <br>
     <h3 style="text-align:center;" >Agregar contacto</h3>
     <div class="card">
@@ -40,7 +40,7 @@
     </div>
     <br>
     
-    <form action="/" method="GET"> {% csrf_token %}
+    <form action="home" method="GET"> {% csrf_token %}
         <div class="btn-group " method="GET">
             <input class="form-control col-xl-12 " id="txtbuscar" name="txtbuscar"  type="text" placeholder="Buscar" aria-label="Search">
             <button class="btn btn-primary submit" >Buscar</button>

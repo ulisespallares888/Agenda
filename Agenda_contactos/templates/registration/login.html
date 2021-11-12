@@ -75,13 +75,15 @@
             <div class="card bg-warning " >
                 <div class="card-body" >
                     <form method="POST" class="form"> {% csrf_token %}
-                    <div class="form-gourp">
+                    <!--  <div class="form-gourp">
                     <input type="text" placeholder="Nombre de usuario" id="txtusuario" name="txtusuario" class="form-control" maxlength="254">
                     </div>
                     <br>
                     <div class="form-gourp">
                     <input type="password" placeholder="Contraseña" id="txtpassword" name="txtpassword" class="form-control" maxlength="254">
                     </div>
+                    -->
+                    {{ form }}
                     <br>
                     <button type="submit" class="btn btn-success btn-block text-white col-xl-12 " >
                         Aceptar
