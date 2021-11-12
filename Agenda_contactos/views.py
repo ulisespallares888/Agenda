@@ -18,9 +18,7 @@ def registrarse(request):
     email = request.POST['txtemail']
     password = request.POST['txtpassword']
     password2 = request.POST['txtpassword2']
-
     usename_exists = User.objects.filter(username=nombre).exists()
-
     if usename_exists:
         messages.warning(request, 'El usuario ya existe')
     else:
@@ -48,7 +46,6 @@ def home(request):
         if len(contactosEncontrados) == 0:
             mensaje = nombrebus + ' no existe'
             messages.warning(request, mensaje)
-        
     return render(request,"crud.html",{"contacto": contactosEncontrados})
     
 
@@ -72,13 +69,13 @@ def edicioncontacto(request,id):
     contacto_edit = contacto.objects.get(id=id)
     return render(request,"edicioncontacto.html",{"id": contacto_edit})
 
+
 @login_required
 def editarcontacto(request,id):
     nombre = request.POST['txtnombre'].capitalize()
     apellido = request.POST['txtapellido'].capitalize()
     telefono = request.POST['txttelefono']
     email = request.POST['txtemail']
-    
     if nombre == '' or apellido == '' or email == '' or telefono == 0:
         messages.warning(request, 'Existen campos vacios')
         contacto_edit = contacto.objects.get(id=id)
