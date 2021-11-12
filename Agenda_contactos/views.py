@@ -4,7 +4,7 @@ from django.forms import Form
 from django.contrib.auth.models import User, auth
 
 from django.contrib import messages
-from . models import usuario, contacto
+from . models import contacto
 from django.contrib.auth.decorators import login_required
 
 
@@ -12,10 +12,6 @@ from django.contrib.auth.decorators import login_required
 def index(request):
     return redirect("accounts/login")
 
-
-"""def cerrar_session(request):
-    return redirect("accounts/logout")"""
- 
 
 def registrarse(request):
     nombre = request.POST['txtnombre']
