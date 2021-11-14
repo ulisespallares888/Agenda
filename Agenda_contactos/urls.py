@@ -7,12 +7,11 @@ from Agenda_contactos import views
 urlpatterns = [
     path('home',views.home,name='home'),
     path('accounts/login/registrarse/',views.registrarse),
-    path('',views.index, name='index'),
+    path('',views.inicio, name='inicio'),
     path('crearcontacto/',views.crearcontacto,name='crearcontacto'),
     path('eliminarcontacto/<id>',views.eliminarcontacto,name='eliminarcontacto'),
     path('edicioncontacto/<id>',views.edicioncontacto,name='edicioncontacto'),
     path('editarcontacto/<id>',views.editarcontacto,name='editarcontacto'),
-    #path('',views.index,name=''),
-    #path('cerrar_session/',views.cerrar_session,name='cerrar_sesion'),
+    path('iniciar_sesion/',views.iniciar_sesion,name='iniciar_sesion'),
     path('accounts/',include('django.contrib.auth.urls')),
     ]

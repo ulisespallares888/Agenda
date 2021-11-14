@@ -2,15 +2,34 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse, request
 from django.forms import Form
 from django.contrib.auth.models import User, auth
-
+from django.contrib.auth import authenticate, login
 from django.contrib import messages
 from . models import contacto
 from django.contrib.auth.decorators import login_required
 
 
 
-def index(request):
-    return redirect("accounts/login")
+"""def index(request):
+    return redirect("accounts/login")"""
+
+def inicio(request):
+    return render(request, 'index.html')
+
+def iniciar_sesion(request):
+    print("asdasdasdasdasdad")
+    username = request.POST['txtusuario']
+    password = request.POST['txtpassword']
+    user = authenticate(request, username=username, password=password)
+    if user is not None:
+        login(request, user)
+        messages.success(request, 'Bienvenido')
+        print("se va al home")
+        return redirect('home')
+    else:
+        messages.warning(request, 'Usuario o contraseña incorrecta')
+        print("no se va al home")
+        return redirect('inicio')
+
 
 
 def registrarse(request):
