@@ -8,10 +8,6 @@ from . models import contacto
 from django.contrib.auth.decorators import login_required
 
 
-
-"""def index(request):
-    return redirect("accounts/login")"""
-
 def inicio(request):
     return render(request, 'index.html')
 
@@ -26,7 +22,6 @@ def iniciar_sesion(request):
     else:
         messages.warning(request, 'Usuario o contraseña incorrecta')
         return redirect('inicio')
-
 
 
 def registrarse(request):
