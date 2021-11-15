@@ -6,7 +6,7 @@ from Agenda_contactos import views
 
 urlpatterns = [
     path('home',views.home,name='home'),
-    path('accounts/login/registrarse/',views.registrarse),
+    path('registrarse/',views.registrarse,name='registrarse'),
     path('',views.inicio, name='inicio'),
     path('crearcontacto/',views.crearcontacto,name='crearcontacto'),
     path('eliminarcontacto/<id>',views.eliminarcontacto,name='eliminarcontacto'),

@@ -16,18 +16,15 @@ def inicio(request):
     return render(request, 'index.html')
 
 def iniciar_sesion(request):
-    print("asdasdasdasdasdad")
     username = request.POST['txtusuario']
     password = request.POST['txtpassword']
     user = authenticate(request, username=username, password=password)
     if user is not None:
         login(request, user)
-        messages.success(request, 'Bienvenido')
-        print("se va al home")
+        messages.success(request, f'Bienvenido {username}')
         return redirect('home')
     else:
         messages.warning(request, 'Usuario o contraseña incorrecta')
-        print("no se va al home")
         return redirect('inicio')
 
 
@@ -53,7 +50,7 @@ def registrarse(request):
             else:
                 mensaje = 'Las contraseñas no coinciden'
                 messages.error(request, mensaje)
-    return redirect('index')
+    return redirect('inicio')
     
 @login_required
 def home(request):
