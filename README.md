@@ -1,1 +1,1 @@
-# AgendaDos es una aplicacion wed para guardar contactos 
+# AgendaDos es una aplicación wed para guardar contactos 
