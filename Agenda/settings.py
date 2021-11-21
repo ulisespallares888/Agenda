@@ -11,7 +11,10 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
 from pathlib import Path
+#new
 import django_heroku
+import dj_database_url
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -26,7 +29,7 @@ SECRET_KEY = 'django-insecure--hpdqxnf1%_f%nfrtj=*k#vojq3s_nsa@hm@0((*5jbs0z2*xk
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -75,24 +78,18 @@ WSGI_APPLICATION = 'Agenda.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-DATABASES = {
+"""DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
     }
+}"""
+
+#new
+DATABASES = {
+    'default': dj_database_url.config()
 }
 
-
-"""DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'd2h7k4pujdd52t',
-        'USER': 'masahwxywesxbu',
-        'PASSWORD': '18c44ed5e309e5ae5c6b50e3ea854ea87827d4cd22eb95500d66c2c446593d7f',
-        'HOST': 'ec2-52-1-20-236.compute-1.amazonaws.com',
-        'PORT': '5432',
-    }
-}"""
 
 
 # Password validation
@@ -140,4 +137,8 @@ STATIC_URL = '/static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+
+
+#new 
+STATICROOT = os.path.join(BASE_DIR, 'static')
 django_heroku.settings(locals())
