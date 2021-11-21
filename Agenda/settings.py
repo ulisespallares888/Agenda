@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'Agenda_contactos',
+    'Notitas',
 ]
 
 MIDDLEWARE = [
@@ -79,18 +80,18 @@ WSGI_APPLICATION = 'Agenda.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-"""DATABASES = {
+DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
     }
-}"""
-
-#new
-DATABASES = {
-    'default': dj_database_url.config()
 }
 
+#new
+"""DATABASES = {
+    'default': dj_database_url.config()
+}
+"""
 
 
 # Password validation
