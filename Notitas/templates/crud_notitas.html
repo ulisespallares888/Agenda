@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>aca deben estar las notitas </h2>
+
+<div class="container">
+
+{% for nota in notatias %}
+<div class="card">
+    <div class="card-header">
+      {{ nota.titulo }}
+    </div>
+    <div class="card-body">
+      <p class="card-text">{{nota.contenido}}</p>
+      <p class="card-text"> {{nota.fecha}}</p>
+      <a href="" class="btn btn-primary">Editar</a>
+    </div>
+  </div>
+
+    
+
+
+{% endfor %}
+
+</div>
+
+{% endblock %}
