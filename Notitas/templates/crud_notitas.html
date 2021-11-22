@@ -1,35 +1,52 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h2>aca deben estar las notitas </h2>
+<br>
 
-<div class="container">
+<a  href="crear_nota/" class="btn btn-warning" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo"><h1>+</h1></a>
 
-    <div class="card">
-        <div class="card-header">
-          
-            <nav class="navbar navbar-expand-lg navbar-light">
-                <div class="container-fluid ">
-                  <div class="class content">
-                    <input type="text" placeholder="Título">
-                    <div class="left" >
-                    <a class="navbar-brand" href="nota_delete/{{ nota.id }}">Crear</a>
-                    </div>
-                    
-                  </div>
-                </div>
-            </nav>
-    
-        </div>
-        <div class="card-body">
-        <textarea name="textarea" id="" cols="" rows=""></textarea>
-        </div>
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Nueva Nota</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        
+        <form action="crear_nota" method="POST"> {% csrf_token %} 
+          <div class="form-group">
+           
+            <!--<label for="recipient-name" class="col-form-label"></label>-->
+            <input type="text" class="form-control" placeholder="Título" id="texttitulo">
+          </div>
+          <div class="form-group">
+            <!--<label for="message-text" class="col-form-label"></label>-->
+            <br>
+            <textarea class="form-control" placeholder="Contenido" id="textcontenido"></textarea>
+          </div>
 
+          <div class="form-group">
+           <br>
+           <button type="submit" class="btn btn-primary">Guardar</button>
+          </div>
 
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+
+        <button type="submit" class="btn btn-primary">Guardar</button>
+      </div>
     </div>
+  </div>
+</div>
 
 
 
+<br>
 <br>
 
 {% for nota in notatias %}
@@ -54,6 +71,7 @@
     </div>
     
 </div>
+
 
 <br>
 
