@@ -1,5 +1,6 @@
 from django.contrib.messages.api import success
 from django.http import request,HttpResponse
+from django.http.response import Http404
 from django.urls import reverse_lazy
 from django.shortcuts import redirect, render
 from django.views.generic.edit import  CreateView, UpdateView, DeleteView 
@@ -35,4 +36,15 @@ def crear_nota(request):
         nota_nueva.save()
         messages.success(request, 'Nota creada')
     return redirect('lista_notas')
+
+
+def eliminar_nota(request, id_nota):
+    nota = notitas.objects.get(id=id_nota)
+    nota.delete()
+    messages.success(request, 'Nota eliminada')
+    return redirect('lista_notas')
+
+
+    
+    
 
