@@ -5,20 +5,52 @@
 
 <div class="container">
 
+    <div class="card">
+        <div class="card-header">
+          
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <div class="container-fluid ">
+                  <div class="class content">
+                    <input type="text" placeholder="Título">
+                    <div class="left" >
+                    <a class="navbar-brand" href="nota_delete/{{ nota.id }}">Crear</a>
+                    </div>
+                    
+                  </div>
+                </div>
+            </nav>
+    
+        </div>
+        <div class="card-body">
+        <textarea name="textarea" id="" cols="30" rows="5"></textarea>
+        </div>
+    </div>
+
+
+<br>
+
 {% for nota in notatias %}
 <div class="card">
     <div class="card-header">
-      {{ nota.titulo }}
+      
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="container-fluid ">
+              <div class="class content">
+                {{ nota.titulo }} 
+                <div class="left" >
+                <a class="navbar-brand" href="nota_delete/{{ nota.id }}">Eliminar</a>
+                </div>
+                
+              </div>
+            </div>
+        </nav>
+
     </div>
     <div class="card-body">
-      <p class="card-text">{{nota.contenido}}</p>
-      <p class="card-text"> {{nota.fecha}}</p>
-      <a href="" class="btn btn-primary">Editar</a>
-    </div>
-  </div>
+      <p class="card-text">{{nota.contenido}}</p>    </div>
+</div>
 
-    
-
+<br>
 
 {% endfor %}
 
