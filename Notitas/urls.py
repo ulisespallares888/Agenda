@@ -7,6 +7,6 @@ from Notitas.views import *
 
 urlpatterns = [
     path('lista_notas',NotasListView.as_view(),name='lista_notas'),
-    path('crear_nota',NotasCreateView.as_view(),name='crear_nota'),
+    path('crear_nota',crear_nota,name='crear_nota'),
     path('accounts/',include('django.contrib.auth.urls')),
     ]

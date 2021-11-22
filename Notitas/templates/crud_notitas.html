@@ -1,11 +1,23 @@
 {% extends "base.html" %}
 
 {% block content %}
+
+{% if messages %}
+            {% for message in messages %}
+               
+                    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                        <strong>{{ message }}</strong> 
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                {% endfor %}
+        {%endif%}
+
+
 <br>
 
 <a  href="crear_nota/" class="btn btn-warning" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo"><h1>+</h1></a>
 
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true"  >
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -18,28 +30,27 @@
         
         <form action="crear_nota" method="POST"> {% csrf_token %} 
           <div class="form-group">
-           
             <!--<label for="recipient-name" class="col-form-label"></label>-->
-            <input type="text" class="form-control" placeholder="Título" id="texttitulo">
+            <input type="text" class="form-control" placeholder="Título" id="texttitulo" >
           </div>
           <div class="form-group">
             <!--<label for="message-text" class="col-form-label"></label>-->
             <br>
-            <textarea class="form-control" placeholder="Contenido" id="textcontenido"></textarea>
+            <textarea class="form-control" placeholder="Contenido" id="textcontenido" ></textarea>
           </div>
 
           <div class="form-group">
            <br>
            <button type="submit" class="btn btn-primary">Guardar</button>
+           <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
           </div>
 
         </form>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+        
 
-        <button type="submit" class="btn btn-primary">Guardar</button>
-      </div>
+       </div>
     </div>
   </div>
 </div>
