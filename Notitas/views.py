@@ -24,7 +24,7 @@ class NotasListView(ListView):
         return notitas.objects.filter(propietario_id = self.request.user.id)
     
     
-
+##### views.py #####
 @login_required
 def crear_nota(request):
     titulo = request.POST.get('texttitulo',False)
