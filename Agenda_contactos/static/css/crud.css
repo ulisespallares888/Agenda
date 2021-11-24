@@ -45,3 +45,37 @@ th{
 	}
   }
 
+
+
+
+  :root {
+    --cardWidth: 240px;
+    --cardHeight: 240px;
+    --cardMargin: 16px;
+  }
+  
+  html, body {
+    height: 100%;
+    margin: 0;
+    
+    font-family: Helvetica;
+    width: 100%;
+  }
+
+ 
+  .main-section {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    
+  }
+  .cards {
+    width: var(--cardWidth);
+    height: var(--cardHeight);
+    margin: var(--cardMargin);
+    
+    
+    background: #fff;
+    
+  }
+  
