@@ -29,7 +29,7 @@ class NotasListView(ListView):
 @login_required
 def crear_nota(request):
     titulo = request.POST.get('texttitulo',False)
-    contenido = request.POST.get('textcontenido',False)
+    contenido = request.POST.get('textcontenido',"asdasdasdasdadadas asd as as dasda sdasd as a")
     if titulo == '' or contenido == '':
         messages.warning(request, 'Existen campos vacios')
     else:

@@ -73,9 +73,12 @@ th{
     width: var(--cardWidth);
     height: var(--cardHeight);
     margin: var(--cardMargin);
-    
-    
-    background: #fff;
+    border: rgb(148, 10, 10);
+    border-color: rgb(189, 186, 186);
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 5px;
+    background: rgb(255, 255, 255);
     
   }
   
