@@ -4,6 +4,7 @@ from django.contrib.auth.views import LoginView, LogoutView
 from django.views.generic.base import TemplateView
 from Agenda_contactos import views 
 
+
 urlpatterns = [
     path('home',views.home,name='home'),
     path('registrarse/',views.registrarse,name='registrarse'),

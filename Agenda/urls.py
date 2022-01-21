@@ -19,8 +19,12 @@ from django.urls.conf import include
 from Agenda_contactos import views 
 from Notitas import views
 
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',include('Agenda_contactos.urls')),
     path('',include('Notitas.urls')),
     ]
+
+
+
