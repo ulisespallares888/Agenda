@@ -1,7 +1,0 @@
-[
-  {
-    "route": "GET /lista_notas",
-    "parameters": "()",
-    "status": 200
-  }
-]

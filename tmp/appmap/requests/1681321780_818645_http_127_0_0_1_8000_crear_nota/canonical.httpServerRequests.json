@@ -1,7 +1,0 @@
-[
-  {
-    "route": "POST /crear_nota",
-    "parameters": "(csrfmiddlewaretoken,texttitulo,textcontenido)",
-    "status": 302
-  }
-]

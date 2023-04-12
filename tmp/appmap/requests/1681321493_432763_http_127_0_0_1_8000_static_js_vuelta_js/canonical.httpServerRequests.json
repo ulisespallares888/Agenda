@@ -1,7 +1,0 @@
-[
-  {
-    "route": "GET /static/js/vuelta.js",
-    "parameters": "()",
-    "status": 404
-  }
-]

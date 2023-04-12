@@ -1,6 +1,0 @@
-[
-  {
-    "caller": "HTTP server requests->GET /static/js/vuelta.js",
-    "callee": "<templates>/UnknownSource#render"
-  }
-]

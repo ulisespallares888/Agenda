@@ -1,7 +1,0 @@
-[
-  {
-    "kind": "http_server_request",
-    "route": "GET /static/js/alerta_eliminar.js",
-    "status_code": 404
-  }
-]
