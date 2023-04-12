@@ -1,8 +1,12 @@
+import statistics
 from django.contrib import admin
 from django.urls import path, include
 from django.contrib.auth.views import LoginView, LogoutView
 from django.views.generic.base import TemplateView
+from Agenda import settings
+from django.conf.urls.static import static
 from Agenda_contactos import views 
+
 
 urlpatterns = [
     path('home',views.home,name='home'),
@@ -14,4 +18,4 @@ urlpatterns = [
     path('editarcontacto/<id>',views.editarcontacto,name='editarcontacto'),
     path('iniciar_sesion/',views.iniciar_sesion,name='iniciar_sesion'),
     path('accounts/',include('django.contrib.auth.urls')),
-    ]
+    ] 

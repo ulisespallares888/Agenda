@@ -21,14 +21,14 @@ class NotasListView(ListView):
     context_object_name = 'notatias'
 
     def get_queryset(self):
-        return notitas.objects.filter(propietario_id = self.request.user.id)
+        return notitas.objects.filter(propietario_id = self.request.user.id).order_by('fecha_creacion').reverse() 
     
     
 ##### views.py #####
 @login_required
 def crear_nota(request):
-    titulo = request.POST.get('texttitulo',False)
-    contenido = request.POST.get('textcontenido',"asdasdasdasdadadas asd as as dasda sdasd as a")
+    titulo = request.POST['texttitulo']
+    contenido = request.POST['textcontenido']
     if titulo == '' or contenido == '':
         messages.warning(request, 'Existen campos vacios')
     else:
@@ -44,12 +44,4 @@ def eliminar_nota(request, id_nota):
     messages.success(request, 'Nota eliminada')
     return redirect('lista_notas')
 
-"""
-class crear_nota(CreateView):
-    model = notitas
-    fields = ['titulo','contenido']
-    form = NotitasForm
-    success_url = reverse_lazy('lista_notas')
-    
-    """
 

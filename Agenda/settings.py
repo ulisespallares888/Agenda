@@ -12,12 +12,14 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 import os
 from pathlib import Path
+
 #new
 #import django_heroku
 #import dj_database_url
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
+#BASE_DIR = os.path.dirname(__file__)
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
@@ -28,9 +30,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure--hpdqxnf1%_f%nfrtj=*k#vojq3s_nsa@hm@0((*5jbs0z2*xk'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
 
 ALLOWED_HOSTS = ['*']
+
+DEBUG = False
+
+
 
 
 # Application definition
@@ -133,7 +138,13 @@ LOGOUT_REDIRECT_URL = 'inicio'
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT=[ os.path.join(BASE_DIR, 'static')]
 
+STATICFILES_DIRS=[ os.path.join(BASE_DIR,'static')]
+
+#MEDIA_URL = [os.path.join(BASE_DIR,'media')]
+
+#MEDIA_ROOT =[ os.path.join(BASE_DIR,'media')]
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
@@ -143,4 +154,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 #new 
 STATICROOT = os.path.join(BASE_DIR, 'static')
-#django_heroku.settings(locals())
+
+DISABLE_COLLECTSTATIC = 1
+

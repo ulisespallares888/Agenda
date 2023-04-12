@@ -15,57 +15,35 @@
 
 <br>
 
-<a  href="crear_nota/" class="btn btn-warning" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo"><h1>+</h1></a>
 
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true"  >
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Nueva Nota</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <form action="crear_nota" method="POST"> {% csrf_token %} 
-          
-          {{ form.as_p }}
-          <button type="submit" class="btn btn-primary">Guardar</button>
-        </form>
 
-        
-        <!--<form action="crear_nota" method="POST"> {% csrf_token %} 
-          <div class="form-group">
-           
-            <input type="text" class="form-control" placeholder="Título" id="texttitulo" >
-          </div>
-          <div class="form-group">
-            
-            <br>
-            <textarea class="form-control" placeholder="Contenido" id="textcontenido" ></textarea>
-          </div>
-         
-         <div class="form-group">
-           <br>
-           <button type="submit" class="btn btn-primary">Guardar</button>
-           <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-          </div>
-
-        </form> -->
-      </div>
-      <div class="modal-footer">
-        
-
-       </div>
+<button  class="btn"  type="button" onclick="ocultar()" style=" border-radius:1.5rem;background-color: #ffc107; color: #fff; height: 3rem;" >
+  <h1 style="margin-top:-6px; ">+</h1>
+</button>
+<br>
+<br>
+<div id="obj1">
+  
+  <form class="form-gropup" action="{% url 'crear_nota' %}" method="POST"> 
+    {% csrf_token %}
+    
+    <div class="form-group">
+      <input type="text" class="form-control" id="texttitulo" placeholder="Título" name="texttitulo">
     </div>
-  </div>
+  
+    <br>
+    
+    <div class="form-group">
+      <textarea class="form-control" id="textcontenido" placeholder="Contenido" name="textcontenido"></textarea>
+    </div>
+    
+    <br>
+    <button type="submit" class="btn btn-primary">Guardar</button>
+
+  </form>
 </div>
 
-
-
 <br>
-<br>
-
 
 <section class="main-section">
   
@@ -79,8 +57,12 @@
               <div class="class content">
                 {{ nota.titulo }} 
                 
+                <!-- 
+                  hcerun boton para eliminar con el evnto "btnEliminacion_nota"
+                -->
+
                 <div class="left" >
-                <a class="navbar-brand" href="eliminar_nota/{{ nota.id }}">Eliminar</a>
+                <a class="navbar-brand" href="eliminar_nota/{{ nota.id }}" id="btnEliminacion_nota">Eliminar</a>
                 </div>
                 
               </div>
