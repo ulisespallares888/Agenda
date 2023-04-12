@@ -1,0 +1,5 @@
+[
+  "Agenda_contactos",
+  "django/contrib",
+  "django/contrib/auth::backends"
+]

@@ -1,0 +1,88 @@
+[
+  {
+    "kind": "http_server_request",
+    "route": "POST /iniciar_sesion/",
+    "status_code": 302,
+    "children": [
+      {
+        "kind": "function",
+        "labels": [
+          "security.authentication"
+        ],
+        "children": [
+          {
+            "kind": "function",
+            "labels": [
+              "security.authentication"
+            ],
+            "children": [
+              {
+                "kind": "function",
+                "labels": [
+                  "security.authorization"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "kind": "sql",
+        "sql": {
+          "analyzed_query": {
+            "actions": [
+              "insert",
+              "select"
+            ],
+            "tables": [
+              "django_session"
+            ],
+            "columns": [
+              "expire_date",
+              "session_data",
+              "session_key"
+            ],
+            "joinCount": 0
+          }
+        }
+      },
+      {
+        "kind": "sql",
+        "sql": {
+          "analyzed_query": {
+            "actions": [
+              "update"
+            ],
+            "tables": [
+              "auth_user"
+            ],
+            "columns": [
+              "auth_user.id",
+              "last_login"
+            ],
+            "joinCount": 0
+          }
+        }
+      },
+      {
+        "kind": "sql",
+        "sql": {
+          "analyzed_query": {
+            "actions": [
+              "update"
+            ],
+            "tables": [
+              "django_session"
+            ],
+            "columns": [
+              "django_session.session_key",
+              "expire_date",
+              "session_data"
+            ],
+            "joinCount": 0
+          }
+        }
+      }
+    ]
+  }
+]

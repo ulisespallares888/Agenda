@@ -1,0 +1,7 @@
+[
+  {
+    "route": "POST /crearcontacto/",
+    "parameters": "(csrfmiddlewaretoken,txtnombre,txtapellido,txttelefono,txtemail)",
+    "status": 302
+  }
+]

@@ -1,0 +1,10 @@
+[
+  {
+    "caller": "Agenda_contactos/views",
+    "callee": "<templates>/DUlisesProyectosProyectosConDjangoProytecto_AgendaMyenvAgendaAgenda_ContactosTemplatesIndexHtml#render"
+  },
+  {
+    "caller": "HTTP server requests->GET /",
+    "callee": "Agenda_contactos/views"
+  }
+]

@@ -10,7 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
-import os
+import os 
 from pathlib import Path
 
 #new
@@ -33,7 +33,7 @@ SECRET_KEY = 'django-insecure--hpdqxnf1%_f%nfrtj=*k#vojq3s_nsa@hm@0((*5jbs0z2*xk
 
 ALLOWED_HOSTS = ['*']
 
-DEBUG = False
+DEBUG = True
 
 
 
@@ -134,26 +134,29 @@ USE_TZ = True
 LOGIN_REDIRECT_URL = 'home'
 LOGOUT_REDIRECT_URL = 'inicio'   
 
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/3.2/howto/static-files/
 
-STATIC_URL = '/static/'
+"""STATIC_URL = '/static/'
 STATIC_ROOT=[ os.path.join(BASE_DIR, 'static')]
 
 STATICFILES_DIRS=[ os.path.join(BASE_DIR,'static')]
 
-#MEDIA_URL = [os.path.join(BASE_DIR,'media')]
+MEDIA_URL = [os.path.join(BASE_DIR,'media')]
 
-#MEDIA_ROOT =[ os.path.join(BASE_DIR,'media')]
-# Default primary key field type
-# https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
+MEDIA_ROOT =[ os.path.join(BASE_DIR,'media')]"""
+
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media'),
+STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static'),
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 
 #new 
-STATICROOT = os.path.join(BASE_DIR, 'static')
+#STATICROOT = os.path.join(BASE_DIR, 'static')
 
 DISABLE_COLLECTSTATIC = 1
+
 

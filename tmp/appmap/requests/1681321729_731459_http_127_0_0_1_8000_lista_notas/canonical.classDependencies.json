@@ -1,0 +1,34 @@
+[
+  {
+    "caller": "<templates>/DUlisesProyectosProyectosConDjangoProytecto_AgendaMyenvAgendaNotitasTemplatesCrud_NotitasHtml#render",
+    "callee": "Database->SELECT \"Notitas_notitas\".\"id\", \"Notitas_notitas\".\"titulo\", \"Notitas_notitas\".\"contenido\", \"Notitas_notitas\".\"propietario_id\", \"Notitas_notitas\".\"fecha_creacion\" FROM \"Notitas_notitas\" WHERE \"Notitas_notitas\".\"propietario_id\" = 1 ORDER BY \"Notitas_notitas\".\"fecha_creacion\" DESC"
+  },
+  {
+    "caller": "HTTP server requests->GET /lista_notas",
+    "callee": "<templates>/DUlisesProyectosProyectosConDjangoProytecto_AgendaMyenvAgendaNotitasTemplatesCrud_NotitasHtml#render"
+  },
+  {
+    "caller": "HTTP server requests->GET /lista_notas",
+    "callee": "Database->SELECT \"auth_user\".\"id\", \"auth_user\".\"password\", \"auth_user\".\"last_login\", \"auth_user\".\"is_superuser\", \"auth_user\".\"username\", \"auth_user\".\"first_name\", \"auth_user\".\"last_name\", \"auth_user\".\"email\", \"auth_user\".\"is_staff\", \"auth_user\".\"is_active\", \"auth_user\".\"date_joined\" FROM \"auth_user\" WHERE \"auth_user\".\"id\" = 1 LIMIT 21"
+  },
+  {
+    "caller": "HTTP server requests->GET /lista_notas",
+    "callee": "Database->SELECT \"django_session\".\"session_key\", \"django_session\".\"session_data\", \"django_session\".\"expire_date\" FROM \"django_session\" WHERE (\"django_session\".\"expire_date\" > '2023-04-12 17:48:49.686458' AND \"django_session\".\"session_key\" = 'c0f7g5c95pamxwylaodv8i1obqtoa4vv') LIMIT 21"
+  },
+  {
+    "caller": "HTTP server requests->GET /lista_notas",
+    "callee": "Notitas/views"
+  },
+  {
+    "caller": "HTTP server requests->GET /lista_notas",
+    "callee": "django/contrib"
+  },
+  {
+    "caller": "Notitas/views",
+    "callee": "Database->SELECT \"Notitas_notitas\".\"id\", \"Notitas_notitas\".\"titulo\", \"Notitas_notitas\".\"contenido\", \"Notitas_notitas\".\"propietario_id\", \"Notitas_notitas\".\"fecha_creacion\" FROM \"Notitas_notitas\" WHERE \"Notitas_notitas\".\"propietario_id\" = 1 ORDER BY \"Notitas_notitas\".\"fecha_creacion\" DESC LIMIT 21"
+  },
+  {
+    "caller": "Notitas/views",
+    "callee": "Database->SELECT \"auth_user\".\"id\", \"auth_user\".\"password\", \"auth_user\".\"last_login\", \"auth_user\".\"is_superuser\", \"auth_user\".\"username\", \"auth_user\".\"first_name\", \"auth_user\".\"last_name\", \"auth_user\".\"email\", \"auth_user\".\"is_staff\", \"auth_user\".\"is_active\", \"auth_user\".\"date_joined\" FROM \"auth_user\" WHERE \"auth_user\".\"id\" = 1 LIMIT 21"
+  }
+]

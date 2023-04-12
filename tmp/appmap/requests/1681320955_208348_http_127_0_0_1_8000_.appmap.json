@@ -1,0 +1,261 @@
+{
+  "events": [
+    {
+      "http_server_request": {
+        "request_method": "GET",
+        "protocol": "HTTP/1.1",
+        "path_info": "/",
+        "normalized_path_info": "/",
+        "mime_type": "text/plain",
+        "headers": {
+          "Content-Length": "",
+          "Content-Type": "text/plain",
+          "Host": "127.0.0.1:8000",
+          "Connection": "keep-alive",
+          "Sec-Ch-Ua": "\"Chromium\";v=\"112\", \"Google Chrome\";v=\"112\", \"Not:A-Brand\";v=\"99\"",
+          "Sec-Ch-Ua-Mobile": "?0",
+          "Sec-Ch-Ua-Platform": "\"Windows\"",
+          "Upgrade-Insecure-Requests": "1",
+          "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36",
+          "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+          "Sec-Fetch-Site": "none",
+          "Sec-Fetch-Mode": "navigate",
+          "Sec-Fetch-User": "?1",
+          "Sec-Fetch-Dest": "document",
+          "Accept-Encoding": "gzip, deflate, br",
+          "Accept-Language": "en,es-419;q=0.9,es;q=0.8",
+          "Cookie": "csrftoken=8t5o2L2frfJr5cE3Xngj2Hf5U0MggLEQrtE0WZ1rKHlzbynVYAycvbj2jNpk0TST"
+        }
+      },
+      "id": 1,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 3183986262608,
+          "value": "<WSGIRequest: GET '/'>",
+          "name": "request",
+          "class": "django.core.handlers.wsgi.WSGIRequest"
+        }
+      ],
+      "id": 2,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "Agenda_contactos.views",
+      "method_id": "inicio",
+      "path": "D:\\Ulises\\#Proyectos\\Proyectos con Django\\Proytecto_Agenda\\myenv\\Agenda\\Agenda_contactos\\views.py",
+      "lineno": 11
+    },
+    {
+      "receiver": {
+        "object_id": 3183986813248,
+        "value": "<django.template.base.Template object at 0x000002E554672940>",
+        "class": "django.template.base.Template"
+      },
+      "path": "D:\\Ulises\\#Proyectos\\Proyectos con Django\\Proytecto_Agenda\\myenv\\Agenda\\Agenda_contactos\\templates\\index.html",
+      "id": 3,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "<templates>.DUlisesProyectosProyectosConDjangoProytecto_AgendaMyenvAgendaAgenda_ContactosTemplatesIndexHtml",
+      "method_id": "render",
+      "static": false
+    },
+    {
+      "parent_id": 3,
+      "elapsed": 0.014999999999417923,
+      "id": 4,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 3183986265488,
+        "value": "<HttpResponse status_code=200, \"text/html; charset=utf-8\">",
+        "class": "django.http.response.HttpResponse"
+      },
+      "parent_id": 2,
+      "elapsed": 0.031002044677734375,
+      "id": 5,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "http_server_response": {
+        "status_code": 200,
+        "mime_type": "text/html; charset=utf-8",
+        "headers": {
+          "Content-Type": "text/html; charset=utf-8",
+          "X-Frame-Options": "DENY",
+          "Vary": "Cookie",
+          "Content-Length": "5745",
+          "X-Content-Type-Options": "nosniff",
+          "Referrer-Policy": "same-origin"
+        }
+      },
+      "parent_id": 1,
+      "elapsed": 0.062000000005355105,
+      "id": 6,
+      "event": "return",
+      "thread_id": 1
+    }
+  ],
+  "version": "1.9",
+  "metadata": {
+    "language": {
+      "name": "python",
+      "engine": "CPython",
+      "version": "3.9.7"
+    },
+    "client": {
+      "name": "appmap",
+      "url": "https://github.com/applandinc/appmap-python"
+    },
+    "git": {
+      "repository": "https://github.com/ulisespallares888/Agenda.git",
+      "branch": "master",
+      "commit": "64e5f45e125a8a6d771aff07e039a1ef8f692d4e",
+      "status": [
+        "M Agenda/__pycache__/settings.cpython-39.pyc",
+        "M Agenda/__pycache__/urls.cpython-39.pyc",
+        "M Agenda/__pycache__/wsgi.cpython-39.pyc",
+        "M Agenda/settings.py",
+        "M Agenda_contactos/__pycache__/urls.cpython-39.pyc",
+        "M Notitas/__pycache__/models.cpython-39.pyc",
+        "M Notitas/__pycache__/urls.cpython-39.pyc",
+        "M Notitas/__pycache__/views.cpython-39.pyc",
+        "M Notitas/migrations/__pycache__/0005_notitas_fecha_creacion.cpython-39.pyc",
+        "?? appmap.yml"
+      ]
+    },
+    "frameworks": [
+      {
+        "name": "Django",
+        "version": "3.2.3"
+      }
+    ],
+    "name": "GET / (200) - 14:35:55.208",
+    "timestamp": 1681320955.208348,
+    "recorder": {
+      "name": "record_requests"
+    },
+    "fingerprints": [
+      {
+        "appmap_digest": "6854d8d55db2c442f0dc05b1c4a4a91e867e24732213cbc0e114d437522fc211",
+        "canonicalization_algorithm": "classDependencies",
+        "digest": "60afecf8eb4e6c2283b8eea1b0930e5ab014202934bba1fb27d63dfb5fe72eb3",
+        "fingerprint_algorithm": "sha256"
+      },
+      {
+        "appmap_digest": "6854d8d55db2c442f0dc05b1c4a4a91e867e24732213cbc0e114d437522fc211",
+        "canonicalization_algorithm": "classes",
+        "digest": "d358f1a5828571a8e9d9fb547fd79cf882015cd72ce499c5b707f3ea97e3eb67",
+        "fingerprint_algorithm": "sha256"
+      },
+      {
+        "appmap_digest": "6854d8d55db2c442f0dc05b1c4a4a91e867e24732213cbc0e114d437522fc211",
+        "canonicalization_algorithm": "httpClientRequests",
+        "digest": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "fingerprint_algorithm": "sha256"
+      },
+      {
+        "appmap_digest": "6854d8d55db2c442f0dc05b1c4a4a91e867e24732213cbc0e114d437522fc211",
+        "canonicalization_algorithm": "httpServerRequests",
+        "digest": "aacc3c841b84493a58dfb3356f16bda64395c892d92eda789dafcbc3ab780543",
+        "fingerprint_algorithm": "sha256"
+      },
+      {
+        "appmap_digest": "6854d8d55db2c442f0dc05b1c4a4a91e867e24732213cbc0e114d437522fc211",
+        "canonicalization_algorithm": "info",
+        "digest": "dd14df5ace771ea66a3e777266eb93c4a2ee4b65eac51c7166e21158caa5bff1",
+        "fingerprint_algorithm": "sha256"
+      },
+      {
+        "appmap_digest": "6854d8d55db2c442f0dc05b1c4a4a91e867e24732213cbc0e114d437522fc211",
+        "canonicalization_algorithm": "labels",
+        "digest": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "fingerprint_algorithm": "sha256"
+      },
+      {
+        "appmap_digest": "6854d8d55db2c442f0dc05b1c4a4a91e867e24732213cbc0e114d437522fc211",
+        "canonicalization_algorithm": "packageDependencies",
+        "digest": "09e29b20434fc45d5d18e8d8f7b90c3d2efcbdabc6292407c1e8ed667c82a9d2",
+        "fingerprint_algorithm": "sha256"
+      },
+      {
+        "appmap_digest": "6854d8d55db2c442f0dc05b1c4a4a91e867e24732213cbc0e114d437522fc211",
+        "canonicalization_algorithm": "packages",
+        "digest": "d48f1af88e824bb685f2690ee720f468091f3edf179df0ceafb031c67e8477f6",
+        "fingerprint_algorithm": "sha256"
+      },
+      {
+        "appmap_digest": "6854d8d55db2c442f0dc05b1c4a4a91e867e24732213cbc0e114d437522fc211",
+        "canonicalization_algorithm": "sqlNormalized",
+        "digest": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "fingerprint_algorithm": "sha256"
+      },
+      {
+        "appmap_digest": "6854d8d55db2c442f0dc05b1c4a4a91e867e24732213cbc0e114d437522fc211",
+        "canonicalization_algorithm": "sqlTables",
+        "digest": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "fingerprint_algorithm": "sha256"
+      },
+      {
+        "appmap_digest": "6854d8d55db2c442f0dc05b1c4a4a91e867e24732213cbc0e114d437522fc211",
+        "canonicalization_algorithm": "trace",
+        "digest": "6848d25a1b9ea486fb0e50199a2d35173a86f0e7e52eb6626eea31be541ef1ae",
+        "fingerprint_algorithm": "sha256"
+      },
+      {
+        "appmap_digest": "6854d8d55db2c442f0dc05b1c4a4a91e867e24732213cbc0e114d437522fc211",
+        "canonicalization_algorithm": "update",
+        "digest": "8ab9502236927b2b9a089421de7f8ddbe671b9373d3a0972c15ea0c669ee89f3",
+        "fingerprint_algorithm": "sha256"
+      }
+    ]
+  },
+  "classMap": [
+    {
+      "name": "Agenda_contactos",
+      "type": "package",
+      "children": [
+        {
+          "name": "views",
+          "type": "class",
+          "children": [
+            {
+              "name": "inicio",
+              "type": "function",
+              "static": true,
+              "location": "D:\\Ulises\\#Proyectos\\Proyectos con Django\\Proytecto_Agenda\\myenv\\Agenda\\Agenda_contactos\\views.py:11"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "http",
+      "name": "HTTP server requests",
+      "children": [
+        {
+          "type": "route",
+          "name": "GET /"
+        }
+      ]
+    },
+    {
+      "type": "class",
+      "name": "<templates>/DUlisesProyectosProyectosConDjangoProytecto_AgendaMyenvAgendaAgenda_ContactosTemplatesIndexHtml",
+      "children": [
+        {
+          "type": "function",
+          "name": "render",
+          "static": false
+        }
+      ]
+    }
+  ]
+}

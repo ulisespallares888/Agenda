@@ -1,0 +1,7 @@
+[
+  {
+    "kind": "http_server_request",
+    "route": "GET /favicon.ico",
+    "status_code": 404
+  }
+]

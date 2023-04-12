@@ -1,0 +1,21 @@
+[
+  {
+    "kind": "http_server_request",
+    "route": "GET /home",
+    "status_code": 200,
+    "children": [
+      {
+        "kind": "function",
+        "labels": [
+          "security.authorization"
+        ]
+      },
+      {
+        "kind": "function",
+        "labels": [
+          "security.authorization"
+        ]
+      }
+    ]
+  }
+]

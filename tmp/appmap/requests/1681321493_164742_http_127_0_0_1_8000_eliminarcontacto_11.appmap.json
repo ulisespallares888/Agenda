@@ -1,0 +1,413 @@
+{
+  "events": [
+    {
+      "http_server_request": {
+        "request_method": "GET",
+        "protocol": "HTTP/1.1",
+        "path_info": "/eliminarcontacto/11",
+        "normalized_path_info": "/eliminarcontacto/{id}",
+        "mime_type": "text/plain",
+        "headers": {
+          "Content-Length": "",
+          "Content-Type": "text/plain",
+          "Host": "127.0.0.1:8000",
+          "Connection": "keep-alive",
+          "Sec-Ch-Ua": "\"Chromium\";v=\"112\", \"Google Chrome\";v=\"112\", \"Not:A-Brand\";v=\"99\"",
+          "Sec-Ch-Ua-Mobile": "?0",
+          "Sec-Ch-Ua-Platform": "\"Windows\"",
+          "Upgrade-Insecure-Requests": "1",
+          "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36",
+          "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+          "Sec-Fetch-Site": "same-origin",
+          "Sec-Fetch-Mode": "navigate",
+          "Sec-Fetch-User": "?1",
+          "Sec-Fetch-Dest": "document",
+          "Referer": "http://127.0.0.1:8000/home",
+          "Accept-Encoding": "gzip, deflate, br",
+          "Accept-Language": "en,es-419;q=0.9,es;q=0.8",
+          "Cookie": "sessionid=c0f7g5c95pamxwylaodv8i1obqtoa4vv; csrftoken=FTcTNFFHu4fkzmghtn5eYYsUFMRRWC9Fbvv6KLPxMN5blQwABSXwFQtkpjlDG69i"
+        }
+      },
+      "message": [
+        {
+          "object_id": 3183987422000,
+          "value": "'11'",
+          "name": "id",
+          "class": "builtins.str"
+        }
+      ],
+      "id": 1,
+      "event": "call",
+      "thread_id": 4
+    },
+    {
+      "static": true,
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 3183987286992,
+          "value": "<WSGIRequest: GET '/eliminarcontacto/11'>",
+          "name": "request",
+          "class": "django.core.handlers.wsgi.WSGIRequest"
+        },
+        {
+          "kind": "req",
+          "object_id": 3183987412720,
+          "value": "'11'",
+          "name": "id",
+          "class": "builtins.str"
+        }
+      ],
+      "id": 2,
+      "event": "call",
+      "thread_id": 4,
+      "defined_class": "Agenda_contactos.views",
+      "method_id": "eliminarcontacto",
+      "path": "D:\\Ulises\\#Proyectos\\Proyectos con Django\\Proytecto_Agenda\\myenv\\Agenda\\Agenda_contactos\\views.py",
+      "lineno": 106
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT \"django_session\".\"session_key\", \"django_session\".\"session_data\", \"django_session\".\"expire_date\" FROM \"django_session\" WHERE (\"django_session\".\"expire_date\" > '2023-04-12 17:44:53.078735' AND \"django_session\".\"session_key\" = 'c0f7g5c95pamxwylaodv8i1obqtoa4vv') LIMIT 21",
+        "database_type": "sqlite",
+        "server_version": "3.35.5"
+      },
+      "id": 3,
+      "event": "call",
+      "thread_id": 4
+    },
+    {
+      "parent_id": 3,
+      "elapsed": 0,
+      "id": 4,
+      "event": "return",
+      "thread_id": 4
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT \"auth_user\".\"id\", \"auth_user\".\"password\", \"auth_user\".\"last_login\", \"auth_user\".\"is_superuser\", \"auth_user\".\"username\", \"auth_user\".\"first_name\", \"auth_user\".\"last_name\", \"auth_user\".\"email\", \"auth_user\".\"is_staff\", \"auth_user\".\"is_active\", \"auth_user\".\"date_joined\" FROM \"auth_user\" WHERE \"auth_user\".\"id\" = 1 LIMIT 21",
+        "database_type": "sqlite",
+        "server_version": "3.35.5"
+      },
+      "id": 5,
+      "event": "call",
+      "thread_id": 4
+    },
+    {
+      "parent_id": 5,
+      "elapsed": 0,
+      "id": 6,
+      "event": "return",
+      "thread_id": 4
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 3183987562720,
+        "value": "<django.contrib.auth.backends.ModelBackend object at 0x000002E5547298E0>",
+        "name": "self",
+        "class": "django.contrib.auth.backends.ModelBackend"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 3183987562384,
+          "value": "<User: uli>",
+          "name": "user",
+          "class": "django.contrib.auth.models.User"
+        }
+      ],
+      "id": 7,
+      "event": "call",
+      "thread_id": 4,
+      "defined_class": "django.contrib.auth.backends.ModelBackend",
+      "method_id": "user_can_authenticate",
+      "path": "C:\\Users\\Usuario\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\django\\contrib\\auth\\backends.py",
+      "lineno": 51
+    },
+    {
+      "return_value": {
+        "object_id": 140719500945512,
+        "value": "True",
+        "class": "builtins.bool"
+      },
+      "parent_id": 7,
+      "elapsed": 0,
+      "id": 8,
+      "event": "return",
+      "thread_id": 4
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT \"Agenda_contactos_contacto\".\"id\", \"Agenda_contactos_contacto\".\"nombre\", \"Agenda_contactos_contacto\".\"apellido\", \"Agenda_contactos_contacto\".\"telefono\", \"Agenda_contactos_contacto\".\"email\", \"Agenda_contactos_contacto\".\"usuario_id\" FROM \"Agenda_contactos_contacto\" WHERE \"Agenda_contactos_contacto\".\"id\" = 11 LIMIT 21",
+        "database_type": "sqlite",
+        "server_version": "3.35.5"
+      },
+      "id": 9,
+      "event": "call",
+      "thread_id": 4
+    },
+    {
+      "parent_id": 9,
+      "elapsed": 0,
+      "id": 10,
+      "event": "return",
+      "thread_id": 4
+    },
+    {
+      "sql_query": {
+        "sql": "DELETE FROM \"Agenda_contactos_contacto\" WHERE \"Agenda_contactos_contacto\".\"id\" IN (11)",
+        "database_type": "sqlite",
+        "server_version": "3.35.5"
+      },
+      "id": 11,
+      "event": "call",
+      "thread_id": 4
+    },
+    {
+      "parent_id": 11,
+      "elapsed": 0.07799999999406282,
+      "id": 12,
+      "event": "return",
+      "thread_id": 4
+    },
+    {
+      "return_value": {
+        "object_id": 3183987563584,
+        "value": "<HttpResponseRedirect status_code=302, \"text/html; charset=utf-8\", url=\"/home\">",
+        "class": "django.http.response.HttpResponseRedirect"
+      },
+      "parent_id": 2,
+      "elapsed": 0.0850071907043457,
+      "id": 13,
+      "event": "return",
+      "thread_id": 4
+    },
+    {
+      "http_server_response": {
+        "status_code": 302,
+        "mime_type": "text/html; charset=utf-8",
+        "headers": {
+          "Content-Type": "text/html; charset=utf-8",
+          "Location": "/home",
+          "X-Frame-Options": "DENY",
+          "Content-Length": "0",
+          "Vary": "Cookie",
+          "X-Content-Type-Options": "nosniff",
+          "Referrer-Policy": "same-origin"
+        }
+      },
+      "parent_id": 1,
+      "elapsed": 0.09299999999348074,
+      "id": 14,
+      "event": "return",
+      "thread_id": 4
+    }
+  ],
+  "version": "1.9",
+  "metadata": {
+    "language": {
+      "name": "python",
+      "engine": "CPython",
+      "version": "3.9.7"
+    },
+    "client": {
+      "name": "appmap",
+      "url": "https://github.com/applandinc/appmap-python"
+    },
+    "git": {
+      "repository": "https://github.com/ulisespallares888/Agenda.git",
+      "branch": "master",
+      "commit": "64e5f45e125a8a6d771aff07e039a1ef8f692d4e",
+      "status": [
+        "M Agenda/__pycache__/settings.cpython-39.pyc",
+        "M Agenda/__pycache__/urls.cpython-39.pyc",
+        "M Agenda/__pycache__/wsgi.cpython-39.pyc",
+        "M Agenda/settings.py",
+        "M Agenda_contactos/__pycache__/urls.cpython-39.pyc",
+        "M Notitas/__pycache__/models.cpython-39.pyc",
+        "M Notitas/__pycache__/urls.cpython-39.pyc",
+        "M Notitas/__pycache__/views.cpython-39.pyc",
+        "M Notitas/migrations/__pycache__/0005_notitas_fecha_creacion.cpython-39.pyc",
+        "?? appmap.yml"
+      ]
+    },
+    "frameworks": [
+      {
+        "name": "Django",
+        "version": "3.2.3"
+      }
+    ],
+    "name": "GET /eliminarcontacto/11 (302) - 14:44:53.164",
+    "timestamp": 1681321493.164742,
+    "recorder": {
+      "name": "record_requests"
+    },
+    "fingerprints": [
+      {
+        "appmap_digest": "25f3bdc59f1912bc46d749c30753f5ffea4bbfa50cd79c28a48f2feb018cf5ab",
+        "canonicalization_algorithm": "classDependencies",
+        "digest": "de6e34cca3aa91075f6bfb3844f48fbf408039bc36d6b7abed97bf97115e4c25",
+        "fingerprint_algorithm": "sha256"
+      },
+      {
+        "appmap_digest": "25f3bdc59f1912bc46d749c30753f5ffea4bbfa50cd79c28a48f2feb018cf5ab",
+        "canonicalization_algorithm": "classes",
+        "digest": "778fefee0401e66b9f16a2141f0cfc7c92c7778d89faf87d8eb2d6332587d9d2",
+        "fingerprint_algorithm": "sha256"
+      },
+      {
+        "appmap_digest": "25f3bdc59f1912bc46d749c30753f5ffea4bbfa50cd79c28a48f2feb018cf5ab",
+        "canonicalization_algorithm": "httpClientRequests",
+        "digest": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "fingerprint_algorithm": "sha256"
+      },
+      {
+        "appmap_digest": "25f3bdc59f1912bc46d749c30753f5ffea4bbfa50cd79c28a48f2feb018cf5ab",
+        "canonicalization_algorithm": "httpServerRequests",
+        "digest": "83091dfe5eb0b1f395a0219e24b2550ee194d086a34264ad89a1098bba442bfe",
+        "fingerprint_algorithm": "sha256"
+      },
+      {
+        "appmap_digest": "25f3bdc59f1912bc46d749c30753f5ffea4bbfa50cd79c28a48f2feb018cf5ab",
+        "canonicalization_algorithm": "info",
+        "digest": "dd191fc6b2ade8caf7e61855b1b708df94589227a89b761da5e0e50fb167b723",
+        "fingerprint_algorithm": "sha256"
+      },
+      {
+        "appmap_digest": "25f3bdc59f1912bc46d749c30753f5ffea4bbfa50cd79c28a48f2feb018cf5ab",
+        "canonicalization_algorithm": "labels",
+        "digest": "d8d09d8cf5896011630c173e10d32585a9aeaad57093a4857ac47290069595fd",
+        "fingerprint_algorithm": "sha256"
+      },
+      {
+        "appmap_digest": "25f3bdc59f1912bc46d749c30753f5ffea4bbfa50cd79c28a48f2feb018cf5ab",
+        "canonicalization_algorithm": "packageDependencies",
+        "digest": "17efedfef6a2f8aba42da54f8c813cec8892f60163fe822cee6c931a7aa79052",
+        "fingerprint_algorithm": "sha256"
+      },
+      {
+        "appmap_digest": "25f3bdc59f1912bc46d749c30753f5ffea4bbfa50cd79c28a48f2feb018cf5ab",
+        "canonicalization_algorithm": "packages",
+        "digest": "8f673bcd91f7f9a8d3d1520dd0f97fbca018888febf50883c45d2de12a7fa234",
+        "fingerprint_algorithm": "sha256"
+      },
+      {
+        "appmap_digest": "25f3bdc59f1912bc46d749c30753f5ffea4bbfa50cd79c28a48f2feb018cf5ab",
+        "canonicalization_algorithm": "sqlNormalized",
+        "digest": "58663f97a4d6c542739ec75df557050656ead82045b7e1aaad61057a4b093739",
+        "fingerprint_algorithm": "sha256"
+      },
+      {
+        "appmap_digest": "25f3bdc59f1912bc46d749c30753f5ffea4bbfa50cd79c28a48f2feb018cf5ab",
+        "canonicalization_algorithm": "sqlTables",
+        "digest": "b48309a6b09c2732bc530f0279695b1ea6738ebd0b55f50ac2f865b622f63514",
+        "fingerprint_algorithm": "sha256"
+      },
+      {
+        "appmap_digest": "25f3bdc59f1912bc46d749c30753f5ffea4bbfa50cd79c28a48f2feb018cf5ab",
+        "canonicalization_algorithm": "trace",
+        "digest": "31521323d0cdb101984d94f33ed289f8deed14a38cfd7c8b5dc9a83b689d0da3",
+        "fingerprint_algorithm": "sha256"
+      },
+      {
+        "appmap_digest": "25f3bdc59f1912bc46d749c30753f5ffea4bbfa50cd79c28a48f2feb018cf5ab",
+        "canonicalization_algorithm": "update",
+        "digest": "1ccaedd33d711cb3ffa7472e85c4e079b36349e6810c251574d2fc3dde708bfb",
+        "fingerprint_algorithm": "sha256"
+      }
+    ]
+  },
+  "classMap": [
+    {
+      "name": "Agenda_contactos",
+      "type": "package",
+      "children": [
+        {
+          "name": "views",
+          "type": "class",
+          "children": [
+            {
+              "name": "eliminarcontacto",
+              "type": "function",
+              "static": true,
+              "location": "D:\\Ulises\\#Proyectos\\Proyectos con Django\\Proytecto_Agenda\\myenv\\Agenda\\Agenda_contactos\\views.py:106"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "django",
+      "type": "package",
+      "children": [
+        {
+          "name": "contrib",
+          "type": "package",
+          "children": [
+            {
+              "name": "auth",
+              "type": "package",
+              "children": [
+                {
+                  "name": "backends",
+                  "type": "package",
+                  "children": [
+                    {
+                      "name": "ModelBackend",
+                      "type": "class",
+                      "children": [
+                        {
+                          "name": "user_can_authenticate",
+                          "type": "function",
+                          "labels": [
+                            "security.authorization"
+                          ],
+                          "static": false,
+                          "location": "C:\\Users\\Usuario\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\django\\contrib\\auth\\backends.py:51"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "http",
+      "name": "HTTP server requests",
+      "children": [
+        {
+          "type": "route",
+          "name": "GET /eliminarcontacto/{id}"
+        }
+      ]
+    },
+    {
+      "type": "database",
+      "name": "Database",
+      "children": [
+        {
+          "type": "query",
+          "name": "SELECT \"django_session\".\"session_key\", \"django_session\".\"session_data\", \"django_session\".\"expire_date\" FROM \"django_session\" WHERE (\"django_session\".\"expire_date\" > '2023-04-12 17:44:53.078735' AND \"django_session\".\"session_key\" = 'c0f7g5c95pamxwylaodv8i1obqtoa4vv') LIMIT 21"
+        },
+        {
+          "type": "query",
+          "name": "SELECT \"auth_user\".\"id\", \"auth_user\".\"password\", \"auth_user\".\"last_login\", \"auth_user\".\"is_superuser\", \"auth_user\".\"username\", \"auth_user\".\"first_name\", \"auth_user\".\"last_name\", \"auth_user\".\"email\", \"auth_user\".\"is_staff\", \"auth_user\".\"is_active\", \"auth_user\".\"date_joined\" FROM \"auth_user\" WHERE \"auth_user\".\"id\" = 1 LIMIT 21"
+        },
+        {
+          "type": "query",
+          "name": "SELECT \"Agenda_contactos_contacto\".\"id\", \"Agenda_contactos_contacto\".\"nombre\", \"Agenda_contactos_contacto\".\"apellido\", \"Agenda_contactos_contacto\".\"telefono\", \"Agenda_contactos_contacto\".\"email\", \"Agenda_contactos_contacto\".\"usuario_id\" FROM \"Agenda_contactos_contacto\" WHERE \"Agenda_contactos_contacto\".\"id\" = 11 LIMIT 21"
+        },
+        {
+          "type": "query",
+          "name": "DELETE FROM \"Agenda_contactos_contacto\" WHERE \"Agenda_contactos_contacto\".\"id\" IN (11)"
+        }
+      ]
+    }
+  ]
+}

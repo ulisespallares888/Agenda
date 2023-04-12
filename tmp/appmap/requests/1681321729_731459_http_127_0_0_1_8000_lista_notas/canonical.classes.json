@@ -1,0 +1,5 @@
+[
+  "<templates>/DUlisesProyectosProyectosConDjangoProytecto_AgendaMyenvAgendaNotitasTemplatesCrud_NotitasHtml",
+  "Notitas/views/NotasListView",
+  "django/contrib/auth/backends/ModelBackend"
+]

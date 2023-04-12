@@ -1,0 +1,209 @@
+{
+  "events": [
+    {
+      "http_server_request": {
+        "request_method": "GET",
+        "protocol": "HTTP/1.1",
+        "path_info": "/static/js/vuelta.js",
+        "mime_type": "text/plain",
+        "headers": {
+          "Content-Length": "",
+          "Content-Type": "text/plain",
+          "Host": "127.0.0.1:8000",
+          "Connection": "keep-alive",
+          "Sec-Ch-Ua": "\"Chromium\";v=\"112\", \"Google Chrome\";v=\"112\", \"Not:A-Brand\";v=\"99\"",
+          "Sec-Ch-Ua-Mobile": "?0",
+          "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36",
+          "Sec-Ch-Ua-Platform": "\"Windows\"",
+          "Accept": "*/*",
+          "Sec-Fetch-Site": "same-origin",
+          "Sec-Fetch-Mode": "no-cors",
+          "Sec-Fetch-Dest": "script",
+          "Referer": "http://127.0.0.1:8000/home",
+          "Accept-Encoding": "gzip, deflate, br",
+          "Accept-Language": "en,es-419;q=0.9,es;q=0.8",
+          "Cookie": "sessionid=c0f7g5c95pamxwylaodv8i1obqtoa4vv; csrftoken=FTcTNFFHu4fkzmghtn5eYYsUFMRRWC9Fbvv6KLPxMN5blQwABSXwFQtkpjlDG69i"
+        }
+      },
+      "id": 1,
+      "event": "call",
+      "thread_id": 6
+    },
+    {
+      "receiver": {
+        "object_id": 3183986966048,
+        "value": "<django.template.base.Template object at 0x000002E554697E20>",
+        "class": "django.template.base.Template"
+      },
+      "path": "<unknown source>",
+      "id": 2,
+      "event": "call",
+      "thread_id": 6,
+      "defined_class": "<templates>.UnknownSource",
+      "method_id": "render",
+      "static": false
+    },
+    {
+      "parent_id": 2,
+      "elapsed": 0,
+      "id": 3,
+      "event": "return",
+      "thread_id": 6
+    },
+    {
+      "http_server_response": {
+        "status_code": 404,
+        "mime_type": "text/html",
+        "headers": {
+          "Content-Type": "text/html",
+          "X-Frame-Options": "DENY",
+          "Content-Length": "179",
+          "X-Content-Type-Options": "nosniff",
+          "Referrer-Policy": "same-origin"
+        }
+      },
+      "parent_id": 1,
+      "elapsed": 0,
+      "id": 4,
+      "event": "return",
+      "thread_id": 6
+    }
+  ],
+  "version": "1.9",
+  "metadata": {
+    "language": {
+      "name": "python",
+      "engine": "CPython",
+      "version": "3.9.7"
+    },
+    "client": {
+      "name": "appmap",
+      "url": "https://github.com/applandinc/appmap-python"
+    },
+    "git": {
+      "repository": "https://github.com/ulisespallares888/Agenda.git",
+      "branch": "master",
+      "commit": "64e5f45e125a8a6d771aff07e039a1ef8f692d4e",
+      "status": [
+        "M Agenda/__pycache__/settings.cpython-39.pyc",
+        "M Agenda/__pycache__/urls.cpython-39.pyc",
+        "M Agenda/__pycache__/wsgi.cpython-39.pyc",
+        "M Agenda/settings.py",
+        "M Agenda_contactos/__pycache__/urls.cpython-39.pyc",
+        "M Notitas/__pycache__/models.cpython-39.pyc",
+        "M Notitas/__pycache__/urls.cpython-39.pyc",
+        "M Notitas/__pycache__/views.cpython-39.pyc",
+        "M Notitas/migrations/__pycache__/0005_notitas_fecha_creacion.cpython-39.pyc",
+        "?? appmap.yml"
+      ]
+    },
+    "frameworks": [
+      {
+        "name": "Django",
+        "version": "3.2.3"
+      }
+    ],
+    "name": "GET /static/js/vuelta.js (404) - 14:44:53.432",
+    "timestamp": 1681321493.432763,
+    "recorder": {
+      "name": "record_requests"
+    },
+    "fingerprints": [
+      {
+        "appmap_digest": "03f5c4f097042c2f3098c0c0a7a5c811047720f3d447a588f76985add9098e58",
+        "canonicalization_algorithm": "classDependencies",
+        "digest": "68041cab48a73416ec932b42e1721cf25ecbe9cd82bb9ac896bbea40a6e678f5",
+        "fingerprint_algorithm": "sha256"
+      },
+      {
+        "appmap_digest": "03f5c4f097042c2f3098c0c0a7a5c811047720f3d447a588f76985add9098e58",
+        "canonicalization_algorithm": "classes",
+        "digest": "df8fde1e5e2b1c3c7e9319172e44a651b26f784b1927e2c7f4d8991ab5a4fbd8",
+        "fingerprint_algorithm": "sha256"
+      },
+      {
+        "appmap_digest": "03f5c4f097042c2f3098c0c0a7a5c811047720f3d447a588f76985add9098e58",
+        "canonicalization_algorithm": "httpClientRequests",
+        "digest": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "fingerprint_algorithm": "sha256"
+      },
+      {
+        "appmap_digest": "03f5c4f097042c2f3098c0c0a7a5c811047720f3d447a588f76985add9098e58",
+        "canonicalization_algorithm": "httpServerRequests",
+        "digest": "35fa184b8b2e367b5894f097ba2f387cd65fd6733a3eadd5f687fba049ded99b",
+        "fingerprint_algorithm": "sha256"
+      },
+      {
+        "appmap_digest": "03f5c4f097042c2f3098c0c0a7a5c811047720f3d447a588f76985add9098e58",
+        "canonicalization_algorithm": "info",
+        "digest": "ca778b289e896d01ed93ccb28d367cb83a6af98934d8976f363fa2a0c91e152e",
+        "fingerprint_algorithm": "sha256"
+      },
+      {
+        "appmap_digest": "03f5c4f097042c2f3098c0c0a7a5c811047720f3d447a588f76985add9098e58",
+        "canonicalization_algorithm": "labels",
+        "digest": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "fingerprint_algorithm": "sha256"
+      },
+      {
+        "appmap_digest": "03f5c4f097042c2f3098c0c0a7a5c811047720f3d447a588f76985add9098e58",
+        "canonicalization_algorithm": "packageDependencies",
+        "digest": "c8d3770cde2038b3b5de759b34aeb6cc00d2cda46720c593df8d9d16c8376e1d",
+        "fingerprint_algorithm": "sha256"
+      },
+      {
+        "appmap_digest": "03f5c4f097042c2f3098c0c0a7a5c811047720f3d447a588f76985add9098e58",
+        "canonicalization_algorithm": "packages",
+        "digest": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "fingerprint_algorithm": "sha256"
+      },
+      {
+        "appmap_digest": "03f5c4f097042c2f3098c0c0a7a5c811047720f3d447a588f76985add9098e58",
+        "canonicalization_algorithm": "sqlNormalized",
+        "digest": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "fingerprint_algorithm": "sha256"
+      },
+      {
+        "appmap_digest": "03f5c4f097042c2f3098c0c0a7a5c811047720f3d447a588f76985add9098e58",
+        "canonicalization_algorithm": "sqlTables",
+        "digest": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "fingerprint_algorithm": "sha256"
+      },
+      {
+        "appmap_digest": "03f5c4f097042c2f3098c0c0a7a5c811047720f3d447a588f76985add9098e58",
+        "canonicalization_algorithm": "trace",
+        "digest": "b0863f553c5b6211e3d56d49b52ec3b578b231c11c3c488d6be09fcf673a9bf3",
+        "fingerprint_algorithm": "sha256"
+      },
+      {
+        "appmap_digest": "03f5c4f097042c2f3098c0c0a7a5c811047720f3d447a588f76985add9098e58",
+        "canonicalization_algorithm": "update",
+        "digest": "476be9f14704a26de4f69b79e44a985ceb666274e8319c3ee5cd215589eb1559",
+        "fingerprint_algorithm": "sha256"
+      }
+    ]
+  },
+  "classMap": [
+    {
+      "type": "http",
+      "name": "HTTP server requests",
+      "children": [
+        {
+          "type": "route",
+          "name": "GET /static/js/vuelta.js"
+        }
+      ]
+    },
+    {
+      "type": "class",
+      "name": "<templates>/UnknownSource",
+      "children": [
+        {
+          "type": "function",
+          "name": "render",
+          "static": false
+        }
+      ]
+    }
+  ]
+}

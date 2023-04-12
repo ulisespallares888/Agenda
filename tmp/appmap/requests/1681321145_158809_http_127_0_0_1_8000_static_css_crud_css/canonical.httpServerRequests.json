@@ -1,0 +1,7 @@
+[
+  {
+    "route": "GET /static/css/crud.css",
+    "parameters": "()",
+    "status": 404
+  }
+]

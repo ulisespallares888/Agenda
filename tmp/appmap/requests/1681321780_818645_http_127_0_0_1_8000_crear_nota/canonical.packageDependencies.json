@@ -1,0 +1,14 @@
+[
+  {
+    "caller": "HTTP server requests",
+    "callee": "Notitas"
+  },
+  {
+    "caller": "Notitas",
+    "callee": "Database"
+  },
+  {
+    "caller": "Notitas",
+    "callee": "django"
+  }
+]

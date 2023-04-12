@@ -1,0 +1,30 @@
+[
+  {
+    "caller": "Agenda_contactos/views",
+    "callee": "Database->SELECT \"django_session\".\"session_key\", \"django_session\".\"session_data\", \"django_session\".\"expire_date\" FROM \"django_session\" WHERE (\"django_session\".\"expire_date\" > '2023-04-12 17:39:45.524046' AND \"django_session\".\"session_key\" = 'c0f7g5c95pamxwylaodv8i1obqtoa4vv') LIMIT 21"
+  },
+  {
+    "caller": "Agenda_contactos/views",
+    "callee": "Database->UPDATE \"auth_user\" SET \"last_login\" = '2023-04-12 17:39:45.526050' WHERE \"auth_user\".\"id\" = 1"
+  },
+  {
+    "caller": "Agenda_contactos/views",
+    "callee": "django/contrib"
+  },
+  {
+    "caller": "HTTP server requests->POST /iniciar_sesion/",
+    "callee": "Agenda_contactos/views"
+  },
+  {
+    "caller": "HTTP server requests->POST /iniciar_sesion/",
+    "callee": "Database->BEGIN"
+  },
+  {
+    "caller": "HTTP server requests->POST /iniciar_sesion/",
+    "callee": "Database->UPDATE \"django_session\" SET \"session_data\" = '.eJxVjDsOwyAQBe9CHSGWj4GU6X0GtLA4OIlAMnYV5e6xJRdJ-2bmvVnAbS1h63kJM7ErA3b53SKmZ64HoAfWe-Op1XWZIz8UftLOx0b5dTvdv4OCvey1dihFVNaKaJMg54TPMGkZKZKZUCoJoEmhIQJ0YOyAdtBmF7z2FpB9vtKuNy8:1pmeRd:aKrHns94imW01KIdzgEjsHKqcmJ_Xy8tfqlZdCsISh0', \"expire_date\" = '2023-04-26 17:39:45.604054' WHERE \"django_session\".\"session_key\" = 'c0f7g5c95pamxwylaodv8i1obqtoa4vv'"
+  },
+  {
+    "caller": "django/contrib",
+    "callee": "Database->SELECT \"auth_user\".\"id\", \"auth_user\".\"password\", \"auth_user\".\"last_login\", \"auth_user\".\"is_superuser\", \"auth_user\".\"username\", \"auth_user\".\"first_name\", \"auth_user\".\"last_name\", \"auth_user\".\"email\", \"auth_user\".\"is_staff\", \"auth_user\".\"is_active\", \"auth_user\".\"date_joined\" FROM \"auth_user\" WHERE \"auth_user\".\"username\" = 'uli' LIMIT 21"
+  }
+]

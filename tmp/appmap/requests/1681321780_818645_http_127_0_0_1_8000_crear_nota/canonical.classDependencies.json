@@ -1,0 +1,26 @@
+[
+  {
+    "caller": "HTTP server requests->POST /crear_nota",
+    "callee": "Notitas/views"
+  },
+  {
+    "caller": "Notitas/views",
+    "callee": "Database->INSERT INTO \"Notitas_notitas\" (\"titulo\", \"contenido\", \"propietario_id\", \"fecha_creacion\") VALUES ('asdasd', 'asdasd', 1, '2023-04-12 17:49:40.695637')"
+  },
+  {
+    "caller": "Notitas/views",
+    "callee": "Database->SELECT \"auth_user\".\"id\", \"auth_user\".\"password\", \"auth_user\".\"last_login\", \"auth_user\".\"is_superuser\", \"auth_user\".\"username\", \"auth_user\".\"first_name\", \"auth_user\".\"last_name\", \"auth_user\".\"email\", \"auth_user\".\"is_staff\", \"auth_user\".\"is_active\", \"auth_user\".\"date_joined\" FROM \"auth_user\" WHERE \"auth_user\".\"id\" = 1 LIMIT 21"
+  },
+  {
+    "caller": "Notitas/views",
+    "callee": "Database->SELECT \"django_session\".\"session_key\", \"django_session\".\"session_data\", \"django_session\".\"expire_date\" FROM \"django_session\" WHERE (\"django_session\".\"expire_date\" > '2023-04-12 17:49:40.686635' AND \"django_session\".\"session_key\" = 'c0f7g5c95pamxwylaodv8i1obqtoa4vv') LIMIT 21"
+  },
+  {
+    "caller": "Notitas/views",
+    "callee": "Database->UPDATE \"Notitas_notitas\" SET \"titulo\" = 'asdasd', \"contenido\" = 'asdasd', \"propietario_id\" = 1, \"fecha_creacion\" = '2023-04-12 17:49:40.695637' WHERE \"Notitas_notitas\".\"id\" = 134"
+  },
+  {
+    "caller": "Notitas/views",
+    "callee": "django/contrib"
+  }
+]

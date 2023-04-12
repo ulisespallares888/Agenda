@@ -1,0 +1,7 @@
+[
+  {
+    "route": "GET /eliminarcontacto/{id}",
+    "parameters": "(id)",
+    "status": 302
+  }
+]

@@ -1,0 +1,22 @@
+[
+  {
+    "caller": "<templates>/DUlisesProyectosProyectosConDjangoProytecto_AgendaMyenvAgendaAgenda_ContactosTemplatesCrudHtml",
+    "callee": "Database"
+  },
+  {
+    "caller": "Agenda_contactos",
+    "callee": "<templates>/DUlisesProyectosProyectosConDjangoProytecto_AgendaMyenvAgendaAgenda_ContactosTemplatesCrudHtml"
+  },
+  {
+    "caller": "Agenda_contactos",
+    "callee": "Database"
+  },
+  {
+    "caller": "Agenda_contactos",
+    "callee": "django"
+  },
+  {
+    "caller": "HTTP server requests",
+    "callee": "Agenda_contactos"
+  }
+]

@@ -1,0 +1,91 @@
+[
+  {
+    "name": "Notitas",
+    "type": "package",
+    "children": [
+      {
+        "name": "views",
+        "type": "class",
+        "children": [
+          {
+            "name": "crear_nota",
+            "type": "function",
+            "static": true,
+            "location": "D:\\Ulises\\#Proyectos\\Proyectos con Django\\Proytecto_Agenda\\myenv\\Agenda\\Notitas\\views.py:28"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "django",
+    "type": "package",
+    "children": [
+      {
+        "name": "contrib",
+        "type": "package",
+        "children": [
+          {
+            "name": "auth",
+            "type": "package",
+            "children": [
+              {
+                "name": "backends",
+                "type": "package",
+                "children": [
+                  {
+                    "name": "ModelBackend",
+                    "type": "class",
+                    "children": [
+                      {
+                        "name": "user_can_authenticate",
+                        "type": "function",
+                        "labels": [
+                          "security.authorization"
+                        ],
+                        "static": false,
+                        "location": "C:\\Users\\Usuario\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\django\\contrib\\auth\\backends.py:51"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "http",
+    "name": "HTTP server requests",
+    "children": [
+      {
+        "type": "route",
+        "name": "POST /crear_nota"
+      }
+    ]
+  },
+  {
+    "type": "database",
+    "name": "Database",
+    "children": [
+      {
+        "type": "query",
+        "name": "SELECT \"django_session\".\"session_key\", \"django_session\".\"session_data\", \"django_session\".\"expire_date\" FROM \"django_session\" WHERE (\"django_session\".\"expire_date\" > '2023-04-12 17:49:40.686635' AND \"django_session\".\"session_key\" = 'c0f7g5c95pamxwylaodv8i1obqtoa4vv') LIMIT 21"
+      },
+      {
+        "type": "query",
+        "name": "SELECT \"auth_user\".\"id\", \"auth_user\".\"password\", \"auth_user\".\"last_login\", \"auth_user\".\"is_superuser\", \"auth_user\".\"username\", \"auth_user\".\"first_name\", \"auth_user\".\"last_name\", \"auth_user\".\"email\", \"auth_user\".\"is_staff\", \"auth_user\".\"is_active\", \"auth_user\".\"date_joined\" FROM \"auth_user\" WHERE \"auth_user\".\"id\" = 1 LIMIT 21"
+      },
+      {
+        "type": "query",
+        "name": "INSERT INTO \"Notitas_notitas\" (\"titulo\", \"contenido\", \"propietario_id\", \"fecha_creacion\") VALUES ('asdasd', 'asdasd', 1, '2023-04-12 17:49:40.695637')"
+      },
+      {
+        "type": "query",
+        "name": "UPDATE \"Notitas_notitas\" SET \"titulo\" = 'asdasd', \"contenido\" = 'asdasd', \"propietario_id\" = 1, \"fecha_creacion\" = '2023-04-12 17:49:40.695637' WHERE \"Notitas_notitas\".\"id\" = 134"
+      }
+    ]
+  }
+]

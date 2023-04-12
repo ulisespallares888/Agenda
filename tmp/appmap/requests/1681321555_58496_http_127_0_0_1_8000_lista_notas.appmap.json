@@ -1,0 +1,808 @@
+{
+  "events": [
+    {
+      "http_server_request": {
+        "request_method": "GET",
+        "protocol": "HTTP/1.1",
+        "path_info": "/lista_notas",
+        "normalized_path_info": "/lista_notas",
+        "mime_type": "text/plain",
+        "headers": {
+          "Content-Length": "",
+          "Content-Type": "text/plain",
+          "Host": "127.0.0.1:8000",
+          "Connection": "keep-alive",
+          "Sec-Ch-Ua": "\"Chromium\";v=\"112\", \"Google Chrome\";v=\"112\", \"Not:A-Brand\";v=\"99\"",
+          "Sec-Ch-Ua-Mobile": "?0",
+          "Sec-Ch-Ua-Platform": "\"Windows\"",
+          "Upgrade-Insecure-Requests": "1",
+          "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36",
+          "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+          "Sec-Fetch-Site": "same-origin",
+          "Sec-Fetch-Mode": "navigate",
+          "Sec-Fetch-User": "?1",
+          "Sec-Fetch-Dest": "document",
+          "Referer": "http://127.0.0.1:8000/home",
+          "Accept-Encoding": "gzip, deflate, br",
+          "Accept-Language": "en,es-419;q=0.9,es;q=0.8",
+          "Cookie": "sessionid=c0f7g5c95pamxwylaodv8i1obqtoa4vv; csrftoken=FTcTNFFHu4fkzmghtn5eYYsUFMRRWC9Fbvv6KLPxMN5blQwABSXwFQtkpjlDG69i"
+        }
+      },
+      "id": 1,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT \"django_session\".\"session_key\", \"django_session\".\"session_data\", \"django_session\".\"expire_date\" FROM \"django_session\" WHERE (\"django_session\".\"expire_date\" > '2023-04-12 17:45:55.393943' AND \"django_session\".\"session_key\" = 'c0f7g5c95pamxwylaodv8i1obqtoa4vv') LIMIT 21",
+        "database_type": "sqlite",
+        "server_version": "3.35.5"
+      },
+      "id": 2,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 2,
+      "elapsed": 0,
+      "id": 3,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT \"auth_user\".\"id\", \"auth_user\".\"password\", \"auth_user\".\"last_login\", \"auth_user\".\"is_superuser\", \"auth_user\".\"username\", \"auth_user\".\"first_name\", \"auth_user\".\"last_name\", \"auth_user\".\"email\", \"auth_user\".\"is_staff\", \"auth_user\".\"is_active\", \"auth_user\".\"date_joined\" FROM \"auth_user\" WHERE \"auth_user\".\"id\" = 1 LIMIT 21",
+        "database_type": "sqlite",
+        "server_version": "3.35.5"
+      },
+      "id": 4,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 4,
+      "elapsed": 0,
+      "id": 5,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 2430509195376,
+        "value": "<django.contrib.auth.backends.ModelBackend object at 0x00000235E5A32070>",
+        "name": "self",
+        "class": "django.contrib.auth.backends.ModelBackend"
+      },
+      "parameters": [
+        {
+          "kind": "req",
+          "object_id": 2430509425616,
+          "value": "<User: uli>",
+          "name": "user",
+          "class": "django.contrib.auth.models.User"
+        }
+      ],
+      "id": 6,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "django.contrib.auth.backends.ModelBackend",
+      "method_id": "user_can_authenticate",
+      "path": "C:\\Users\\Usuario\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\django\\contrib\\auth\\backends.py",
+      "lineno": 51
+    },
+    {
+      "return_value": {
+        "object_id": 140719500945512,
+        "value": "True",
+        "class": "builtins.bool"
+      },
+      "parent_id": 6,
+      "elapsed": 0,
+      "id": 7,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "static": false,
+      "receiver": {
+        "kind": "req",
+        "object_id": 2430509196432,
+        "value": "<Notitas.views.NotasListView object at 0x00000235E5A32490>",
+        "name": "self",
+        "class": "Notitas.views.NotasListView"
+      },
+      "id": 8,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "Notitas.views.NotasListView",
+      "method_id": "get_queryset",
+      "path": "D:\\Ulises\\#Proyectos\\Proyectos con Django\\Proytecto_Agenda\\myenv\\Agenda\\Notitas\\views.py",
+      "lineno": 23
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT \"Notitas_notitas\".\"id\", \"Notitas_notitas\".\"titulo\", \"Notitas_notitas\".\"contenido\", \"Notitas_notitas\".\"propietario_id\", \"Notitas_notitas\".\"fecha_creacion\" FROM \"Notitas_notitas\" WHERE \"Notitas_notitas\".\"propietario_id\" = 1 ORDER BY \"Notitas_notitas\".\"fecha_creacion\" DESC LIMIT 21",
+        "database_type": "sqlite",
+        "server_version": "3.35.5"
+      },
+      "id": 9,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 9,
+      "elapsed": 0,
+      "id": 10,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "return_value": {
+        "object_id": 2430509272848,
+        "value": "<django.db.models.query.QuerySet object at 0x235e5a44f10>",
+        "class": "django.db.models.query.QuerySet"
+      },
+      "parent_id": 8,
+      "elapsed": 0,
+      "id": 11,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "receiver": {
+        "object_id": 2430509427152,
+        "value": "<django.template.base.Template object at 0x00000235E5A6A9D0>",
+        "class": "django.template.base.Template"
+      },
+      "path": "D:\\Ulises\\#Proyectos\\Proyectos con Django\\Proytecto_Agenda\\myenv\\Agenda\\Notitas\\templates\\crud_notitas.html",
+      "id": 12,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "<templates>.DUlisesProyectosProyectosConDjangoProytecto_AgendaMyenvAgendaNotitasTemplatesCrud_NotitasHtml",
+      "method_id": "render",
+      "static": false
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT \"Notitas_notitas\".\"id\", \"Notitas_notitas\".\"titulo\", \"Notitas_notitas\".\"contenido\", \"Notitas_notitas\".\"propietario_id\", \"Notitas_notitas\".\"fecha_creacion\" FROM \"Notitas_notitas\" WHERE \"Notitas_notitas\".\"propietario_id\" = 1 ORDER BY \"Notitas_notitas\".\"fecha_creacion\" DESC",
+        "database_type": "sqlite",
+        "server_version": "3.35.5"
+      },
+      "id": 13,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 13,
+      "elapsed": 0,
+      "id": 14,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 12,
+      "elapsed": 0.031000000002677552,
+      "id": 15,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT \"Notitas_notitas\".\"id\", \"Notitas_notitas\".\"titulo\", \"Notitas_notitas\".\"contenido\", \"Notitas_notitas\".\"propietario_id\", \"Notitas_notitas\".\"fecha_creacion\" FROM \"Notitas_notitas\" WHERE \"Notitas_notitas\".\"propietario_id\" = 1 ORDER BY \"Notitas_notitas\".\"fecha_creacion\" DESC LIMIT 21",
+        "database_type": "sqlite",
+        "server_version": "3.35.5"
+      },
+      "id": 16,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 16,
+      "elapsed": 0,
+      "id": 17,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT \"Notitas_notitas\".\"id\", \"Notitas_notitas\".\"titulo\", \"Notitas_notitas\".\"contenido\", \"Notitas_notitas\".\"propietario_id\", \"Notitas_notitas\".\"fecha_creacion\" FROM \"Notitas_notitas\" WHERE \"Notitas_notitas\".\"propietario_id\" = 1 ORDER BY \"Notitas_notitas\".\"fecha_creacion\" DESC LIMIT 21",
+        "database_type": "sqlite",
+        "server_version": "3.35.5"
+      },
+      "id": 18,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 18,
+      "elapsed": 0,
+      "id": 19,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT \"Notitas_notitas\".\"id\", \"Notitas_notitas\".\"titulo\", \"Notitas_notitas\".\"contenido\", \"Notitas_notitas\".\"propietario_id\", \"Notitas_notitas\".\"fecha_creacion\" FROM \"Notitas_notitas\" WHERE \"Notitas_notitas\".\"propietario_id\" = 1 ORDER BY \"Notitas_notitas\".\"fecha_creacion\" DESC LIMIT 21",
+        "database_type": "sqlite",
+        "server_version": "3.35.5"
+      },
+      "id": 20,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 20,
+      "elapsed": 0,
+      "id": 21,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT \"Notitas_notitas\".\"id\", \"Notitas_notitas\".\"titulo\", \"Notitas_notitas\".\"contenido\", \"Notitas_notitas\".\"propietario_id\", \"Notitas_notitas\".\"fecha_creacion\" FROM \"Notitas_notitas\" WHERE \"Notitas_notitas\".\"propietario_id\" = 1 ORDER BY \"Notitas_notitas\".\"fecha_creacion\" DESC LIMIT 21",
+        "database_type": "sqlite",
+        "server_version": "3.35.5"
+      },
+      "id": 22,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 22,
+      "elapsed": 0,
+      "id": 23,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT \"Notitas_notitas\".\"id\", \"Notitas_notitas\".\"titulo\", \"Notitas_notitas\".\"contenido\", \"Notitas_notitas\".\"propietario_id\", \"Notitas_notitas\".\"fecha_creacion\" FROM \"Notitas_notitas\" WHERE \"Notitas_notitas\".\"propietario_id\" = 1 ORDER BY \"Notitas_notitas\".\"fecha_creacion\" DESC LIMIT 21",
+        "database_type": "sqlite",
+        "server_version": "3.35.5"
+      },
+      "id": 24,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 24,
+      "elapsed": 0,
+      "id": 25,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT \"Notitas_notitas\".\"id\", \"Notitas_notitas\".\"titulo\", \"Notitas_notitas\".\"contenido\", \"Notitas_notitas\".\"propietario_id\", \"Notitas_notitas\".\"fecha_creacion\" FROM \"Notitas_notitas\" WHERE \"Notitas_notitas\".\"propietario_id\" = 1 ORDER BY \"Notitas_notitas\".\"fecha_creacion\" DESC LIMIT 21",
+        "database_type": "sqlite",
+        "server_version": "3.35.5"
+      },
+      "id": 26,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 26,
+      "elapsed": 0,
+      "id": 27,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT \"Notitas_notitas\".\"id\", \"Notitas_notitas\".\"titulo\", \"Notitas_notitas\".\"contenido\", \"Notitas_notitas\".\"propietario_id\", \"Notitas_notitas\".\"fecha_creacion\" FROM \"Notitas_notitas\" WHERE \"Notitas_notitas\".\"propietario_id\" = 1 ORDER BY \"Notitas_notitas\".\"fecha_creacion\" DESC LIMIT 21",
+        "database_type": "sqlite",
+        "server_version": "3.35.5"
+      },
+      "id": 28,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 28,
+      "elapsed": 0,
+      "id": 29,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT \"Notitas_notitas\".\"id\", \"Notitas_notitas\".\"titulo\", \"Notitas_notitas\".\"contenido\", \"Notitas_notitas\".\"propietario_id\", \"Notitas_notitas\".\"fecha_creacion\" FROM \"Notitas_notitas\" WHERE \"Notitas_notitas\".\"propietario_id\" = 1 ORDER BY \"Notitas_notitas\".\"fecha_creacion\" DESC LIMIT 21",
+        "database_type": "sqlite",
+        "server_version": "3.35.5"
+      },
+      "id": 30,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 30,
+      "elapsed": 0,
+      "id": 31,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT \"Notitas_notitas\".\"id\", \"Notitas_notitas\".\"titulo\", \"Notitas_notitas\".\"contenido\", \"Notitas_notitas\".\"propietario_id\", \"Notitas_notitas\".\"fecha_creacion\" FROM \"Notitas_notitas\" WHERE \"Notitas_notitas\".\"propietario_id\" = 1 ORDER BY \"Notitas_notitas\".\"fecha_creacion\" DESC LIMIT 21",
+        "database_type": "sqlite",
+        "server_version": "3.35.5"
+      },
+      "id": 32,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 32,
+      "elapsed": 0,
+      "id": 33,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT \"Notitas_notitas\".\"id\", \"Notitas_notitas\".\"titulo\", \"Notitas_notitas\".\"contenido\", \"Notitas_notitas\".\"propietario_id\", \"Notitas_notitas\".\"fecha_creacion\" FROM \"Notitas_notitas\" WHERE \"Notitas_notitas\".\"propietario_id\" = 1 ORDER BY \"Notitas_notitas\".\"fecha_creacion\" DESC LIMIT 21",
+        "database_type": "sqlite",
+        "server_version": "3.35.5"
+      },
+      "id": 34,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 34,
+      "elapsed": 0,
+      "id": 35,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT \"Notitas_notitas\".\"id\", \"Notitas_notitas\".\"titulo\", \"Notitas_notitas\".\"contenido\", \"Notitas_notitas\".\"propietario_id\", \"Notitas_notitas\".\"fecha_creacion\" FROM \"Notitas_notitas\" WHERE \"Notitas_notitas\".\"propietario_id\" = 1 ORDER BY \"Notitas_notitas\".\"fecha_creacion\" DESC LIMIT 21",
+        "database_type": "sqlite",
+        "server_version": "3.35.5"
+      },
+      "id": 36,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 36,
+      "elapsed": 0,
+      "id": 37,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT \"Notitas_notitas\".\"id\", \"Notitas_notitas\".\"titulo\", \"Notitas_notitas\".\"contenido\", \"Notitas_notitas\".\"propietario_id\", \"Notitas_notitas\".\"fecha_creacion\" FROM \"Notitas_notitas\" WHERE \"Notitas_notitas\".\"propietario_id\" = 1 ORDER BY \"Notitas_notitas\".\"fecha_creacion\" DESC LIMIT 21",
+        "database_type": "sqlite",
+        "server_version": "3.35.5"
+      },
+      "id": 38,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 38,
+      "elapsed": 0,
+      "id": 39,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT \"Notitas_notitas\".\"id\", \"Notitas_notitas\".\"titulo\", \"Notitas_notitas\".\"contenido\", \"Notitas_notitas\".\"propietario_id\", \"Notitas_notitas\".\"fecha_creacion\" FROM \"Notitas_notitas\" WHERE \"Notitas_notitas\".\"propietario_id\" = 1 ORDER BY \"Notitas_notitas\".\"fecha_creacion\" DESC LIMIT 21",
+        "database_type": "sqlite",
+        "server_version": "3.35.5"
+      },
+      "id": 40,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 40,
+      "elapsed": 0,
+      "id": 41,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT \"Notitas_notitas\".\"id\", \"Notitas_notitas\".\"titulo\", \"Notitas_notitas\".\"contenido\", \"Notitas_notitas\".\"propietario_id\", \"Notitas_notitas\".\"fecha_creacion\" FROM \"Notitas_notitas\" WHERE \"Notitas_notitas\".\"propietario_id\" = 1 ORDER BY \"Notitas_notitas\".\"fecha_creacion\" DESC LIMIT 21",
+        "database_type": "sqlite",
+        "server_version": "3.35.5"
+      },
+      "id": 42,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 42,
+      "elapsed": 0,
+      "id": 43,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT \"Notitas_notitas\".\"id\", \"Notitas_notitas\".\"titulo\", \"Notitas_notitas\".\"contenido\", \"Notitas_notitas\".\"propietario_id\", \"Notitas_notitas\".\"fecha_creacion\" FROM \"Notitas_notitas\" WHERE \"Notitas_notitas\".\"propietario_id\" = 1 ORDER BY \"Notitas_notitas\".\"fecha_creacion\" DESC LIMIT 21",
+        "database_type": "sqlite",
+        "server_version": "3.35.5"
+      },
+      "id": 44,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 44,
+      "elapsed": 0,
+      "id": 45,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT \"Notitas_notitas\".\"id\", \"Notitas_notitas\".\"titulo\", \"Notitas_notitas\".\"contenido\", \"Notitas_notitas\".\"propietario_id\", \"Notitas_notitas\".\"fecha_creacion\" FROM \"Notitas_notitas\" WHERE \"Notitas_notitas\".\"propietario_id\" = 1 ORDER BY \"Notitas_notitas\".\"fecha_creacion\" DESC LIMIT 21",
+        "database_type": "sqlite",
+        "server_version": "3.35.5"
+      },
+      "id": 46,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 46,
+      "elapsed": 0,
+      "id": 47,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT \"Notitas_notitas\".\"id\", \"Notitas_notitas\".\"titulo\", \"Notitas_notitas\".\"contenido\", \"Notitas_notitas\".\"propietario_id\", \"Notitas_notitas\".\"fecha_creacion\" FROM \"Notitas_notitas\" WHERE \"Notitas_notitas\".\"propietario_id\" = 1 ORDER BY \"Notitas_notitas\".\"fecha_creacion\" DESC LIMIT 21",
+        "database_type": "sqlite",
+        "server_version": "3.35.5"
+      },
+      "id": 48,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 48,
+      "elapsed": 0,
+      "id": 49,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT \"Notitas_notitas\".\"id\", \"Notitas_notitas\".\"titulo\", \"Notitas_notitas\".\"contenido\", \"Notitas_notitas\".\"propietario_id\", \"Notitas_notitas\".\"fecha_creacion\" FROM \"Notitas_notitas\" WHERE \"Notitas_notitas\".\"propietario_id\" = 1 ORDER BY \"Notitas_notitas\".\"fecha_creacion\" DESC LIMIT 21",
+        "database_type": "sqlite",
+        "server_version": "3.35.5"
+      },
+      "id": 50,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 50,
+      "elapsed": 0,
+      "id": 51,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT \"Notitas_notitas\".\"id\", \"Notitas_notitas\".\"titulo\", \"Notitas_notitas\".\"contenido\", \"Notitas_notitas\".\"propietario_id\", \"Notitas_notitas\".\"fecha_creacion\" FROM \"Notitas_notitas\" WHERE \"Notitas_notitas\".\"propietario_id\" = 1 ORDER BY \"Notitas_notitas\".\"fecha_creacion\" DESC LIMIT 21",
+        "database_type": "sqlite",
+        "server_version": "3.35.5"
+      },
+      "id": 52,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 52,
+      "elapsed": 0,
+      "id": 53,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "sql_query": {
+        "sql": "SELECT \"Notitas_notitas\".\"id\", \"Notitas_notitas\".\"titulo\", \"Notitas_notitas\".\"contenido\", \"Notitas_notitas\".\"propietario_id\", \"Notitas_notitas\".\"fecha_creacion\" FROM \"Notitas_notitas\" WHERE \"Notitas_notitas\".\"propietario_id\" = 1 ORDER BY \"Notitas_notitas\".\"fecha_creacion\" DESC LIMIT 21",
+        "database_type": "sqlite",
+        "server_version": "3.35.5"
+      },
+      "id": 54,
+      "event": "call",
+      "thread_id": 1
+    },
+    {
+      "parent_id": 54,
+      "elapsed": 0,
+      "id": 55,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "receiver": {
+        "object_id": 2430509612240,
+        "value": "<django.template.base.Template object at 0x00000235E5A97CD0>",
+        "class": "django.template.base.Template"
+      },
+      "path": "<unknown source>",
+      "id": 56,
+      "event": "call",
+      "thread_id": 1,
+      "defined_class": "<templates>.UnknownSource",
+      "method_id": "render",
+      "static": false
+    },
+    {
+      "parent_id": 56,
+      "elapsed": 0.046999999991385266,
+      "id": 57,
+      "event": "return",
+      "thread_id": 1
+    },
+    {
+      "http_server_response": {
+        "status_code": 500,
+        "mime_type": "text/html",
+        "headers": {
+          "Content-Type": "text/html",
+          "X-Frame-Options": "DENY",
+          "Vary": "Cookie",
+          "Content-Length": "222575",
+          "X-Content-Type-Options": "nosniff",
+          "Referrer-Policy": "same-origin"
+        }
+      },
+      "parent_id": 1,
+      "elapsed": 0.20299999999406282,
+      "id": 58,
+      "event": "return",
+      "thread_id": 1
+    }
+  ],
+  "version": "1.9",
+  "metadata": {
+    "language": {
+      "name": "python",
+      "engine": "CPython",
+      "version": "3.9.7"
+    },
+    "client": {
+      "name": "appmap",
+      "url": "https://github.com/applandinc/appmap-python"
+    },
+    "git": {
+      "repository": "https://github.com/ulisespallares888/Agenda.git",
+      "branch": "master",
+      "commit": "64e5f45e125a8a6d771aff07e039a1ef8f692d4e",
+      "status": [
+        "M Agenda/__pycache__/settings.cpython-39.pyc",
+        "M Agenda/__pycache__/urls.cpython-39.pyc",
+        "M Agenda/__pycache__/wsgi.cpython-39.pyc",
+        "M Agenda/settings.py",
+        "M Agenda_contactos/__pycache__/urls.cpython-39.pyc",
+        "M Notitas/__pycache__/models.cpython-39.pyc",
+        "M Notitas/__pycache__/urls.cpython-39.pyc",
+        "M Notitas/__pycache__/views.cpython-39.pyc",
+        "M Notitas/migrations/__pycache__/0005_notitas_fecha_creacion.cpython-39.pyc",
+        "M db.sqlite3",
+        "?? .vscode/",
+        "?? appmap.yml",
+        "?? tmp/"
+      ]
+    },
+    "frameworks": [
+      {
+        "name": "Django",
+        "version": "3.2.3"
+      }
+    ],
+    "name": "GET /lista_notas (500) - 14:45:55.584",
+    "timestamp": 1681321555.58496,
+    "recorder": {
+      "name": "record_requests"
+    },
+    "fingerprints": [
+      {
+        "appmap_digest": "c6574b38656d8559aded66f8df52e3e4b42d57447dbdbd590a69c476f0c98d30",
+        "canonicalization_algorithm": "classDependencies",
+        "digest": "5a4a7365cd1069d7b3a2ed64427387ccd9dbe3314dafac4cccd1fad0e6a53928",
+        "fingerprint_algorithm": "sha256"
+      },
+      {
+        "appmap_digest": "c6574b38656d8559aded66f8df52e3e4b42d57447dbdbd590a69c476f0c98d30",
+        "canonicalization_algorithm": "classes",
+        "digest": "6b7bd8bdf039d3402e0724b0cb84103f423a4bcdacc0023d5f953e79e2de54ee",
+        "fingerprint_algorithm": "sha256"
+      },
+      {
+        "appmap_digest": "c6574b38656d8559aded66f8df52e3e4b42d57447dbdbd590a69c476f0c98d30",
+        "canonicalization_algorithm": "httpClientRequests",
+        "digest": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "fingerprint_algorithm": "sha256"
+      },
+      {
+        "appmap_digest": "c6574b38656d8559aded66f8df52e3e4b42d57447dbdbd590a69c476f0c98d30",
+        "canonicalization_algorithm": "httpServerRequests",
+        "digest": "fe7ddfed3fedd6175129a9b005ebbc1ea9058222bb50c1c893d0d12eb3369111",
+        "fingerprint_algorithm": "sha256"
+      },
+      {
+        "appmap_digest": "c6574b38656d8559aded66f8df52e3e4b42d57447dbdbd590a69c476f0c98d30",
+        "canonicalization_algorithm": "info",
+        "digest": "310adecf418c1943830048a305c385fa1c660027ddcdec7e4060873073534b9c",
+        "fingerprint_algorithm": "sha256"
+      },
+      {
+        "appmap_digest": "c6574b38656d8559aded66f8df52e3e4b42d57447dbdbd590a69c476f0c98d30",
+        "canonicalization_algorithm": "labels",
+        "digest": "d8d09d8cf5896011630c173e10d32585a9aeaad57093a4857ac47290069595fd",
+        "fingerprint_algorithm": "sha256"
+      },
+      {
+        "appmap_digest": "c6574b38656d8559aded66f8df52e3e4b42d57447dbdbd590a69c476f0c98d30",
+        "canonicalization_algorithm": "packageDependencies",
+        "digest": "7273bc4b2907d6405ab1314a417ba7640a310a9716d35154e43cdf7a32ec8f25",
+        "fingerprint_algorithm": "sha256"
+      },
+      {
+        "appmap_digest": "c6574b38656d8559aded66f8df52e3e4b42d57447dbdbd590a69c476f0c98d30",
+        "canonicalization_algorithm": "packages",
+        "digest": "e5453f39705ef0ca715c4568fcfe9fb64791f85eab1b01e9484ba9626970e3d5",
+        "fingerprint_algorithm": "sha256"
+      },
+      {
+        "appmap_digest": "c6574b38656d8559aded66f8df52e3e4b42d57447dbdbd590a69c476f0c98d30",
+        "canonicalization_algorithm": "sqlNormalized",
+        "digest": "e0deffa3e6d79448ec49c6cc824ea59507c046e2fafbcc20e20035a41770e0ed",
+        "fingerprint_algorithm": "sha256"
+      },
+      {
+        "appmap_digest": "c6574b38656d8559aded66f8df52e3e4b42d57447dbdbd590a69c476f0c98d30",
+        "canonicalization_algorithm": "sqlTables",
+        "digest": "9aeb9ea41fa49ae08ba948f36a70391dfaca7b4188f6e1c9e48086bd81dfd28d",
+        "fingerprint_algorithm": "sha256"
+      },
+      {
+        "appmap_digest": "c6574b38656d8559aded66f8df52e3e4b42d57447dbdbd590a69c476f0c98d30",
+        "canonicalization_algorithm": "trace",
+        "digest": "3a0b7b16ea43ea3b21e7c3b4ef20e1d0c1d459ceb45c043e953e140f5e498620",
+        "fingerprint_algorithm": "sha256"
+      },
+      {
+        "appmap_digest": "c6574b38656d8559aded66f8df52e3e4b42d57447dbdbd590a69c476f0c98d30",
+        "canonicalization_algorithm": "update",
+        "digest": "e68b3c4af4432ad041e6850b9362cef3d686182fef8731195fa112524afdda1b",
+        "fingerprint_algorithm": "sha256"
+      }
+    ]
+  },
+  "classMap": [
+    {
+      "name": "django",
+      "type": "package",
+      "children": [
+        {
+          "name": "contrib",
+          "type": "package",
+          "children": [
+            {
+              "name": "auth",
+              "type": "package",
+              "children": [
+                {
+                  "name": "backends",
+                  "type": "package",
+                  "children": [
+                    {
+                      "name": "ModelBackend",
+                      "type": "class",
+                      "children": [
+                        {
+                          "name": "user_can_authenticate",
+                          "type": "function",
+                          "labels": [
+                            "security.authorization"
+                          ],
+                          "static": false,
+                          "location": "C:\\Users\\Usuario\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\django\\contrib\\auth\\backends.py:51"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Notitas",
+      "type": "package",
+      "children": [
+        {
+          "name": "views",
+          "type": "package",
+          "children": [
+            {
+              "name": "NotasListView",
+              "type": "class",
+              "children": [
+                {
+                  "name": "get_queryset",
+                  "type": "function",
+                  "static": false,
+                  "location": "D:\\Ulises\\#Proyectos\\Proyectos con Django\\Proytecto_Agenda\\myenv\\Agenda\\Notitas\\views.py:23"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "http",
+      "name": "HTTP server requests",
+      "children": [
+        {
+          "type": "route",
+          "name": "GET /lista_notas"
+        }
+      ]
+    },
+    {
+      "type": "database",
+      "name": "Database",
+      "children": [
+        {
+          "type": "query",
+          "name": "SELECT \"django_session\".\"session_key\", \"django_session\".\"session_data\", \"django_session\".\"expire_date\" FROM \"django_session\" WHERE (\"django_session\".\"expire_date\" > '2023-04-12 17:45:55.393943' AND \"django_session\".\"session_key\" = 'c0f7g5c95pamxwylaodv8i1obqtoa4vv') LIMIT 21"
+        },
+        {
+          "type": "query",
+          "name": "SELECT \"auth_user\".\"id\", \"auth_user\".\"password\", \"auth_user\".\"last_login\", \"auth_user\".\"is_superuser\", \"auth_user\".\"username\", \"auth_user\".\"first_name\", \"auth_user\".\"last_name\", \"auth_user\".\"email\", \"auth_user\".\"is_staff\", \"auth_user\".\"is_active\", \"auth_user\".\"date_joined\" FROM \"auth_user\" WHERE \"auth_user\".\"id\" = 1 LIMIT 21"
+        },
+        {
+          "type": "query",
+          "name": "SELECT \"Notitas_notitas\".\"id\", \"Notitas_notitas\".\"titulo\", \"Notitas_notitas\".\"contenido\", \"Notitas_notitas\".\"propietario_id\", \"Notitas_notitas\".\"fecha_creacion\" FROM \"Notitas_notitas\" WHERE \"Notitas_notitas\".\"propietario_id\" = 1 ORDER BY \"Notitas_notitas\".\"fecha_creacion\" DESC LIMIT 21"
+        },
+        {
+          "type": "query",
+          "name": "SELECT \"Notitas_notitas\".\"id\", \"Notitas_notitas\".\"titulo\", \"Notitas_notitas\".\"contenido\", \"Notitas_notitas\".\"propietario_id\", \"Notitas_notitas\".\"fecha_creacion\" FROM \"Notitas_notitas\" WHERE \"Notitas_notitas\".\"propietario_id\" = 1 ORDER BY \"Notitas_notitas\".\"fecha_creacion\" DESC"
+        }
+      ]
+    },
+    {
+      "type": "class",
+      "name": "<templates>/DUlisesProyectosProyectosConDjangoProytecto_AgendaMyenvAgendaNotitasTemplatesCrud_NotitasHtml",
+      "children": [
+        {
+          "type": "function",
+          "name": "render",
+          "static": false
+        }
+      ]
+    },
+    {
+      "type": "class",
+      "name": "<templates>/UnknownSource",
+      "children": [
+        {
+          "type": "function",
+          "name": "render",
+          "static": false
+        }
+      ]
+    }
+  ]
+}

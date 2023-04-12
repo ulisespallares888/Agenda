@@ -1,0 +1,30 @@
+[
+  {
+    "caller": "<templates>/DUlisesProyectosProyectosConDjangoProytecto_AgendaMyenvAgendaNotitasTemplatesCrud_NotitasHtml",
+    "callee": "Database"
+  },
+  {
+    "caller": "HTTP server requests",
+    "callee": "<templates>/DUlisesProyectosProyectosConDjangoProytecto_AgendaMyenvAgendaNotitasTemplatesCrud_NotitasHtml"
+  },
+  {
+    "caller": "HTTP server requests",
+    "callee": "<templates>/UnknownSource"
+  },
+  {
+    "caller": "HTTP server requests",
+    "callee": "Database"
+  },
+  {
+    "caller": "HTTP server requests",
+    "callee": "Notitas"
+  },
+  {
+    "caller": "HTTP server requests",
+    "callee": "django"
+  },
+  {
+    "caller": "Notitas",
+    "callee": "Database"
+  }
+]

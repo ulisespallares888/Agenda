@@ -1,0 +1,4 @@
+[
+  "Agenda_contactos/views",
+  "django/contrib/auth/backends/ModelBackend"
+]

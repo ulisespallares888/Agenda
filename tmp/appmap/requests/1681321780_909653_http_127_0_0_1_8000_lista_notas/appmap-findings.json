@@ -1,0 +1,915 @@
+{
+  "configuration": {
+    "checks": [
+      {
+        "rule": "authz-before-authn"
+      },
+      {
+        "rule": "deprecated-crypto-algorithm"
+      },
+      {
+        "rule": "deserialization-of-untrusted-data"
+      },
+      {
+        "rule": "exec-of-untrusted-command"
+      },
+      {
+        "rule": "http-500"
+      },
+      {
+        "rule": "logout-without-session-reset"
+      },
+      {
+        "rule": "missing-content-type"
+      },
+      {
+        "rule": "n-plus-one-query"
+      },
+      {
+        "rule": "secret-in-log"
+      },
+      {
+        "rule": "too-many-joins"
+      },
+      {
+        "rule": "too-many-updates"
+      },
+      {
+        "rule": "unauthenticated-encryption"
+      },
+      {
+        "rule": "update-in-get-request"
+      }
+    ],
+    "timestampMs": 1681318714130.6113
+  },
+  "appMapMetadata": {
+    "d:\\Ulises\\#Proyectos\\Proyectos con Django\\Proytecto_Agenda\\myenv\\Agenda\\tmp\\appmap\\requests\\1681321780_909653_http_127_0_0_1_8000_lista_notas.appmap.json": {
+      "name": "GET /lista_notas (200) - 14:49:40.909",
+      "timestamp": 1681321780.909653,
+      "fingerprints": [
+        {
+          "appmap_digest": "f803f0da7f135399fa8358ba6fb87ea0cf1600fa80b78555e0515bd58f5bb50a",
+          "canonicalization_algorithm": "classDependencies",
+          "digest": "e598f93fb61feb67b186d05b155a78deae3c793a04346b977c1e853753e0c0ef",
+          "fingerprint_algorithm": "sha256"
+        },
+        {
+          "appmap_digest": "f803f0da7f135399fa8358ba6fb87ea0cf1600fa80b78555e0515bd58f5bb50a",
+          "canonicalization_algorithm": "classes",
+          "digest": "daabd3a8e690f226c9b1ee798888ebfaf0bb432e6f1bf0c224b945bbb6231c83",
+          "fingerprint_algorithm": "sha256"
+        },
+        {
+          "appmap_digest": "f803f0da7f135399fa8358ba6fb87ea0cf1600fa80b78555e0515bd58f5bb50a",
+          "canonicalization_algorithm": "httpClientRequests",
+          "digest": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "fingerprint_algorithm": "sha256"
+        },
+        {
+          "appmap_digest": "f803f0da7f135399fa8358ba6fb87ea0cf1600fa80b78555e0515bd58f5bb50a",
+          "canonicalization_algorithm": "httpServerRequests",
+          "digest": "613ca934531c6d55791f0c65b7ee5013b3e30616a379517cf0c6db45a0a4cf07",
+          "fingerprint_algorithm": "sha256"
+        },
+        {
+          "appmap_digest": "f803f0da7f135399fa8358ba6fb87ea0cf1600fa80b78555e0515bd58f5bb50a",
+          "canonicalization_algorithm": "info",
+          "digest": "9a6fb8e135807d8b5bfb6cf31213ac55bf09c2a9cafb1395ed6914d5ef97dc45",
+          "fingerprint_algorithm": "sha256"
+        },
+        {
+          "appmap_digest": "f803f0da7f135399fa8358ba6fb87ea0cf1600fa80b78555e0515bd58f5bb50a",
+          "canonicalization_algorithm": "labels",
+          "digest": "d8d09d8cf5896011630c173e10d32585a9aeaad57093a4857ac47290069595fd",
+          "fingerprint_algorithm": "sha256"
+        },
+        {
+          "appmap_digest": "f803f0da7f135399fa8358ba6fb87ea0cf1600fa80b78555e0515bd58f5bb50a",
+          "canonicalization_algorithm": "packageDependencies",
+          "digest": "c5fbfe2f5fccd821cd1a8ca3a217b3f4effb976f16d8ab88ca5a002899f272a4",
+          "fingerprint_algorithm": "sha256"
+        },
+        {
+          "appmap_digest": "f803f0da7f135399fa8358ba6fb87ea0cf1600fa80b78555e0515bd58f5bb50a",
+          "canonicalization_algorithm": "packages",
+          "digest": "e5453f39705ef0ca715c4568fcfe9fb64791f85eab1b01e9484ba9626970e3d5",
+          "fingerprint_algorithm": "sha256"
+        },
+        {
+          "appmap_digest": "f803f0da7f135399fa8358ba6fb87ea0cf1600fa80b78555e0515bd58f5bb50a",
+          "canonicalization_algorithm": "sqlNormalized",
+          "digest": "e0deffa3e6d79448ec49c6cc824ea59507c046e2fafbcc20e20035a41770e0ed",
+          "fingerprint_algorithm": "sha256"
+        },
+        {
+          "appmap_digest": "f803f0da7f135399fa8358ba6fb87ea0cf1600fa80b78555e0515bd58f5bb50a",
+          "canonicalization_algorithm": "sqlTables",
+          "digest": "9aeb9ea41fa49ae08ba948f36a70391dfaca7b4188f6e1c9e48086bd81dfd28d",
+          "fingerprint_algorithm": "sha256"
+        },
+        {
+          "appmap_digest": "f803f0da7f135399fa8358ba6fb87ea0cf1600fa80b78555e0515bd58f5bb50a",
+          "canonicalization_algorithm": "trace",
+          "digest": "6cb44afffe13c8957c404880fbb86d477b07809eca2cb0e8f338f1509a755f2c",
+          "fingerprint_algorithm": "sha256"
+        },
+        {
+          "appmap_digest": "f803f0da7f135399fa8358ba6fb87ea0cf1600fa80b78555e0515bd58f5bb50a",
+          "canonicalization_algorithm": "update",
+          "digest": "6315318cbe202c223920af32c001f5311520b25b7eba7fb37f64c985c2825f16",
+          "fingerprint_algorithm": "sha256"
+        }
+      ]
+    }
+  },
+  "findings": [
+    {
+      "appMapFile": "d:\\Ulises\\#Proyectos\\Proyectos con Django\\Proytecto_Agenda\\myenv\\Agenda\\tmp\\appmap\\requests\\1681321780_909653_http_127_0_0_1_8000_lista_notas.appmap.json",
+      "checkId": "authz-before-authn",
+      "ruleId": "authz-before-authn",
+      "ruleTitle": "Authorization performed before authentication",
+      "event": {
+        "static": false,
+        "receiver": {
+          "kind": "req",
+          "object_id": 1982321910784,
+          "value": "<django.contrib.auth.backends.ModelBackend object at 0x000001CD8B97E400>",
+          "name": "self",
+          "class": "django.contrib.auth.backends.ModelBackend"
+        },
+        "parameters": [
+          {
+            "kind": "req",
+            "object_id": 1982321984656,
+            "value": "<User: uli>",
+            "name": "user",
+            "class": "django.contrib.auth.models.User"
+          }
+        ],
+        "id": 6,
+        "event": "call",
+        "thread_id": 1,
+        "defined_class": "django.contrib.auth.backends.ModelBackend",
+        "method_id": "user_can_authenticate",
+        "path": "C:\\Users\\Usuario\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\django\\contrib\\auth\\backends.py",
+        "lineno": 51
+      },
+      "hash": "44e9188dd0f29644d00df7271b7c54766dc83abab1acd85c36035550fe23527f",
+      "hash_v2": "310b4208e854989d608dbeee4fe7e5be3c75ce0deeecb8f3369c9a53c2aa52c1",
+      "stack": [
+        "C:\\Users\\Usuario\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\django\\contrib\\auth\\backends.py:51"
+      ],
+      "scope": {
+        "http_server_request": {
+          "request_method": "GET",
+          "protocol": "HTTP/1.1",
+          "path_info": "/lista_notas",
+          "normalized_path_info": "/lista_notas",
+          "mime_type": "text/plain",
+          "headers": {
+            "Content-Length": "",
+            "Content-Type": "text/plain",
+            "Host": "127.0.0.1:8000",
+            "Connection": "keep-alive",
+            "Cache-Control": "max-age=0",
+            "Upgrade-Insecure-Requests": "1",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36",
+            "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+            "Sec-Fetch-Site": "same-origin",
+            "Sec-Fetch-Mode": "navigate",
+            "Sec-Fetch-User": "?1",
+            "Sec-Fetch-Dest": "document",
+            "Sec-Ch-Ua": "\"Chromium\";v=\"112\", \"Google Chrome\";v=\"112\", \"Not:A-Brand\";v=\"99\"",
+            "Sec-Ch-Ua-Mobile": "?0",
+            "Sec-Ch-Ua-Platform": "\"Windows\"",
+            "Referer": "http://127.0.0.1:8000/lista_notas",
+            "Accept-Encoding": "gzip, deflate, br",
+            "Accept-Language": "en,es-419;q=0.9,es;q=0.8",
+            "Cookie": "sessionid=c0f7g5c95pamxwylaodv8i1obqtoa4vv; csrftoken=FTcTNFFHu4fkzmghtn5eYYsUFMRRWC9Fbvv6KLPxMN5blQwABSXwFQtkpjlDG69i; messages=W1siX19qc29uX21lc3NhZ2UiLDAsMjUsIk5vdGEgY3JlYWRhIl1d:1pmebE:A7aGcw-ehpc7T_5A4qtX0W-VR7LNSP_ALLEL_-Siakc"
+          }
+        },
+        "id": 1,
+        "event": "call",
+        "thread_id": 1
+      },
+      "message": "django/contrib/auth/backends/ModelBackend#user_can_authenticate provides authorization, but the request is not authenticated",
+      "relatedEvents": [
+        {
+          "static": false,
+          "receiver": {
+            "kind": "req",
+            "object_id": 1982321910784,
+            "value": "<django.contrib.auth.backends.ModelBackend object at 0x000001CD8B97E400>",
+            "name": "self",
+            "class": "django.contrib.auth.backends.ModelBackend"
+          },
+          "parameters": [
+            {
+              "kind": "req",
+              "object_id": 1982321984656,
+              "value": "<User: uli>",
+              "name": "user",
+              "class": "django.contrib.auth.models.User"
+            }
+          ],
+          "id": 6,
+          "event": "call",
+          "thread_id": 1,
+          "defined_class": "django.contrib.auth.backends.ModelBackend",
+          "method_id": "user_can_authenticate",
+          "path": "C:\\Users\\Usuario\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\django\\contrib\\auth\\backends.py",
+          "lineno": 51
+        },
+        {
+          "http_server_request": {
+            "request_method": "GET",
+            "protocol": "HTTP/1.1",
+            "path_info": "/lista_notas",
+            "normalized_path_info": "/lista_notas",
+            "mime_type": "text/plain",
+            "headers": {
+              "Content-Length": "",
+              "Content-Type": "text/plain",
+              "Host": "127.0.0.1:8000",
+              "Connection": "keep-alive",
+              "Cache-Control": "max-age=0",
+              "Upgrade-Insecure-Requests": "1",
+              "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36",
+              "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+              "Sec-Fetch-Site": "same-origin",
+              "Sec-Fetch-Mode": "navigate",
+              "Sec-Fetch-User": "?1",
+              "Sec-Fetch-Dest": "document",
+              "Sec-Ch-Ua": "\"Chromium\";v=\"112\", \"Google Chrome\";v=\"112\", \"Not:A-Brand\";v=\"99\"",
+              "Sec-Ch-Ua-Mobile": "?0",
+              "Sec-Ch-Ua-Platform": "\"Windows\"",
+              "Referer": "http://127.0.0.1:8000/lista_notas",
+              "Accept-Encoding": "gzip, deflate, br",
+              "Accept-Language": "en,es-419;q=0.9,es;q=0.8",
+              "Cookie": "sessionid=c0f7g5c95pamxwylaodv8i1obqtoa4vv; csrftoken=FTcTNFFHu4fkzmghtn5eYYsUFMRRWC9Fbvv6KLPxMN5blQwABSXwFQtkpjlDG69i; messages=W1siX19qc29uX21lc3NhZ2UiLDAsMjUsIk5vdGEgY3JlYWRhIl1d:1pmebE:A7aGcw-ehpc7T_5A4qtX0W-VR7LNSP_ALLEL_-Siakc"
+            }
+          },
+          "id": 1,
+          "event": "call",
+          "thread_id": 1
+        }
+      ],
+      "impactDomain": "Security",
+      "participatingEvents": {
+        "request": {
+          "http_server_request": {
+            "request_method": "GET",
+            "protocol": "HTTP/1.1",
+            "path_info": "/lista_notas",
+            "normalized_path_info": "/lista_notas",
+            "mime_type": "text/plain",
+            "headers": {
+              "Content-Length": "",
+              "Content-Type": "text/plain",
+              "Host": "127.0.0.1:8000",
+              "Connection": "keep-alive",
+              "Cache-Control": "max-age=0",
+              "Upgrade-Insecure-Requests": "1",
+              "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36",
+              "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+              "Sec-Fetch-Site": "same-origin",
+              "Sec-Fetch-Mode": "navigate",
+              "Sec-Fetch-User": "?1",
+              "Sec-Fetch-Dest": "document",
+              "Sec-Ch-Ua": "\"Chromium\";v=\"112\", \"Google Chrome\";v=\"112\", \"Not:A-Brand\";v=\"99\"",
+              "Sec-Ch-Ua-Mobile": "?0",
+              "Sec-Ch-Ua-Platform": "\"Windows\"",
+              "Referer": "http://127.0.0.1:8000/lista_notas",
+              "Accept-Encoding": "gzip, deflate, br",
+              "Accept-Language": "en,es-419;q=0.9,es;q=0.8",
+              "Cookie": "sessionid=c0f7g5c95pamxwylaodv8i1obqtoa4vv; csrftoken=FTcTNFFHu4fkzmghtn5eYYsUFMRRWC9Fbvv6KLPxMN5blQwABSXwFQtkpjlDG69i; messages=W1siX19qc29uX21lc3NhZ2UiLDAsMjUsIk5vdGEgY3JlYWRhIl1d:1pmebE:A7aGcw-ehpc7T_5A4qtX0W-VR7LNSP_ALLEL_-Siakc"
+            }
+          },
+          "id": 1,
+          "event": "call",
+          "thread_id": 1
+        }
+      }
+    },
+    {
+      "appMapFile": "d:\\Ulises\\#Proyectos\\Proyectos con Django\\Proytecto_Agenda\\myenv\\Agenda\\tmp\\appmap\\requests\\1681321780_909653_http_127_0_0_1_8000_lista_notas.appmap.json",
+      "checkId": "n-plus-one-query",
+      "ruleId": "n-plus-one-query",
+      "ruleTitle": "N plus 1 SQL query",
+      "event": {
+        "sql_query": {
+          "sql": "SELECT \"auth_user\".\"id\", \"auth_user\".\"password\", \"auth_user\".\"last_login\", \"auth_user\".\"is_superuser\", \"auth_user\".\"username\", \"auth_user\".\"first_name\", \"auth_user\".\"last_name\", \"auth_user\".\"email\", \"auth_user\".\"is_staff\", \"auth_user\".\"is_active\", \"auth_user\".\"date_joined\" FROM \"auth_user\" WHERE \"auth_user\".\"id\" = 1 LIMIT 21",
+          "database_type": "sqlite",
+          "server_version": "3.35.5"
+        },
+        "id": 11,
+        "event": "call",
+        "thread_id": 1
+      },
+      "hash": "f30682a42596fc9ed773c68a06b23101f1b26b9ba2ad4c89460e3688010f8999",
+      "hash_v2": "11efa109b275f784b720ae19a58cfc37573276b12584d0fd60602760fbe9aa15",
+      "stack": [
+        "D:\\Ulises\\#Proyectos\\Proyectos con Django\\Proytecto_Agenda\\myenv\\Agenda\\Notitas\\views.py:23"
+      ],
+      "scope": {
+        "http_server_request": {
+          "request_method": "GET",
+          "protocol": "HTTP/1.1",
+          "path_info": "/lista_notas",
+          "normalized_path_info": "/lista_notas",
+          "mime_type": "text/plain",
+          "headers": {
+            "Content-Length": "",
+            "Content-Type": "text/plain",
+            "Host": "127.0.0.1:8000",
+            "Connection": "keep-alive",
+            "Cache-Control": "max-age=0",
+            "Upgrade-Insecure-Requests": "1",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36",
+            "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+            "Sec-Fetch-Site": "same-origin",
+            "Sec-Fetch-Mode": "navigate",
+            "Sec-Fetch-User": "?1",
+            "Sec-Fetch-Dest": "document",
+            "Sec-Ch-Ua": "\"Chromium\";v=\"112\", \"Google Chrome\";v=\"112\", \"Not:A-Brand\";v=\"99\"",
+            "Sec-Ch-Ua-Mobile": "?0",
+            "Sec-Ch-Ua-Platform": "\"Windows\"",
+            "Referer": "http://127.0.0.1:8000/lista_notas",
+            "Accept-Encoding": "gzip, deflate, br",
+            "Accept-Language": "en,es-419;q=0.9,es;q=0.8",
+            "Cookie": "sessionid=c0f7g5c95pamxwylaodv8i1obqtoa4vv; csrftoken=FTcTNFFHu4fkzmghtn5eYYsUFMRRWC9Fbvv6KLPxMN5blQwABSXwFQtkpjlDG69i; messages=W1siX19qc29uX21lc3NhZ2UiLDAsMjUsIk5vdGEgY3JlYWRhIl1d:1pmebE:A7aGcw-ehpc7T_5A4qtX0W-VR7LNSP_ALLEL_-Siakc"
+          }
+        },
+        "id": 1,
+        "event": "call",
+        "thread_id": 1
+      },
+      "message": "Notitas/views/NotasListView#get_queryset[8] contains 9 occurrences of SQL: SELECT \"auth_user\".\"id\", \"auth_user\".\"password\", \"auth_user\".\"last_login\", \"auth_user\".\"is_superuser\", \"auth_user\".\"username\", \"auth_user\".\"first_name\", \"auth_user\".\"last_name\", \"auth_user\".\"email\", \"auth_user\".\"is_staff\", \"auth_user\".\"is_active\", \"auth_user\".\"date_joined\" FROM \"auth_user\" WHERE \"auth_user\".\"id\" = ? LIMIT ?",
+      "groupMessage": "SELECT \"auth_user\".\"id\", \"auth_user\".\"password\", \"auth_user\".\"last_login\", \"auth_user\".\"is_superuser\", \"auth_user\".\"username\", \"auth_user\".\"first_name\", \"auth_user\".\"last_name\", \"auth_user\".\"email\", \"auth_user\".\"is_staff\", \"auth_user\".\"is_active\", \"auth_user\".\"date_joined\" FROM \"auth_user\" WHERE \"auth_user\".\"id\" = ? LIMIT ?",
+      "occurranceCount": 9,
+      "relatedEvents": [
+        {
+          "sql_query": {
+            "sql": "SELECT \"auth_user\".\"id\", \"auth_user\".\"password\", \"auth_user\".\"last_login\", \"auth_user\".\"is_superuser\", \"auth_user\".\"username\", \"auth_user\".\"first_name\", \"auth_user\".\"last_name\", \"auth_user\".\"email\", \"auth_user\".\"is_staff\", \"auth_user\".\"is_active\", \"auth_user\".\"date_joined\" FROM \"auth_user\" WHERE \"auth_user\".\"id\" = 1 LIMIT 21",
+            "database_type": "sqlite",
+            "server_version": "3.35.5"
+          },
+          "id": 11,
+          "event": "call",
+          "thread_id": 1
+        },
+        {
+          "sql_query": {
+            "sql": "SELECT \"auth_user\".\"id\", \"auth_user\".\"password\", \"auth_user\".\"last_login\", \"auth_user\".\"is_superuser\", \"auth_user\".\"username\", \"auth_user\".\"first_name\", \"auth_user\".\"last_name\", \"auth_user\".\"email\", \"auth_user\".\"is_staff\", \"auth_user\".\"is_active\", \"auth_user\".\"date_joined\" FROM \"auth_user\" WHERE \"auth_user\".\"id\" = 1 LIMIT 21",
+            "database_type": "sqlite",
+            "server_version": "3.35.5"
+          },
+          "id": 13,
+          "event": "call",
+          "thread_id": 1
+        },
+        {
+          "sql_query": {
+            "sql": "SELECT \"auth_user\".\"id\", \"auth_user\".\"password\", \"auth_user\".\"last_login\", \"auth_user\".\"is_superuser\", \"auth_user\".\"username\", \"auth_user\".\"first_name\", \"auth_user\".\"last_name\", \"auth_user\".\"email\", \"auth_user\".\"is_staff\", \"auth_user\".\"is_active\", \"auth_user\".\"date_joined\" FROM \"auth_user\" WHERE \"auth_user\".\"id\" = 1 LIMIT 21",
+            "database_type": "sqlite",
+            "server_version": "3.35.5"
+          },
+          "id": 15,
+          "event": "call",
+          "thread_id": 1
+        },
+        {
+          "sql_query": {
+            "sql": "SELECT \"auth_user\".\"id\", \"auth_user\".\"password\", \"auth_user\".\"last_login\", \"auth_user\".\"is_superuser\", \"auth_user\".\"username\", \"auth_user\".\"first_name\", \"auth_user\".\"last_name\", \"auth_user\".\"email\", \"auth_user\".\"is_staff\", \"auth_user\".\"is_active\", \"auth_user\".\"date_joined\" FROM \"auth_user\" WHERE \"auth_user\".\"id\" = 1 LIMIT 21",
+            "database_type": "sqlite",
+            "server_version": "3.35.5"
+          },
+          "id": 17,
+          "event": "call",
+          "thread_id": 1
+        },
+        {
+          "sql_query": {
+            "sql": "SELECT \"auth_user\".\"id\", \"auth_user\".\"password\", \"auth_user\".\"last_login\", \"auth_user\".\"is_superuser\", \"auth_user\".\"username\", \"auth_user\".\"first_name\", \"auth_user\".\"last_name\", \"auth_user\".\"email\", \"auth_user\".\"is_staff\", \"auth_user\".\"is_active\", \"auth_user\".\"date_joined\" FROM \"auth_user\" WHERE \"auth_user\".\"id\" = 1 LIMIT 21",
+            "database_type": "sqlite",
+            "server_version": "3.35.5"
+          },
+          "id": 19,
+          "event": "call",
+          "thread_id": 1
+        },
+        {
+          "sql_query": {
+            "sql": "SELECT \"auth_user\".\"id\", \"auth_user\".\"password\", \"auth_user\".\"last_login\", \"auth_user\".\"is_superuser\", \"auth_user\".\"username\", \"auth_user\".\"first_name\", \"auth_user\".\"last_name\", \"auth_user\".\"email\", \"auth_user\".\"is_staff\", \"auth_user\".\"is_active\", \"auth_user\".\"date_joined\" FROM \"auth_user\" WHERE \"auth_user\".\"id\" = 1 LIMIT 21",
+            "database_type": "sqlite",
+            "server_version": "3.35.5"
+          },
+          "id": 21,
+          "event": "call",
+          "thread_id": 1
+        },
+        {
+          "sql_query": {
+            "sql": "SELECT \"auth_user\".\"id\", \"auth_user\".\"password\", \"auth_user\".\"last_login\", \"auth_user\".\"is_superuser\", \"auth_user\".\"username\", \"auth_user\".\"first_name\", \"auth_user\".\"last_name\", \"auth_user\".\"email\", \"auth_user\".\"is_staff\", \"auth_user\".\"is_active\", \"auth_user\".\"date_joined\" FROM \"auth_user\" WHERE \"auth_user\".\"id\" = 1 LIMIT 21",
+            "database_type": "sqlite",
+            "server_version": "3.35.5"
+          },
+          "id": 23,
+          "event": "call",
+          "thread_id": 1
+        },
+        {
+          "sql_query": {
+            "sql": "SELECT \"auth_user\".\"id\", \"auth_user\".\"password\", \"auth_user\".\"last_login\", \"auth_user\".\"is_superuser\", \"auth_user\".\"username\", \"auth_user\".\"first_name\", \"auth_user\".\"last_name\", \"auth_user\".\"email\", \"auth_user\".\"is_staff\", \"auth_user\".\"is_active\", \"auth_user\".\"date_joined\" FROM \"auth_user\" WHERE \"auth_user\".\"id\" = 1 LIMIT 21",
+            "database_type": "sqlite",
+            "server_version": "3.35.5"
+          },
+          "id": 25,
+          "event": "call",
+          "thread_id": 1
+        },
+        {
+          "sql_query": {
+            "sql": "SELECT \"auth_user\".\"id\", \"auth_user\".\"password\", \"auth_user\".\"last_login\", \"auth_user\".\"is_superuser\", \"auth_user\".\"username\", \"auth_user\".\"first_name\", \"auth_user\".\"last_name\", \"auth_user\".\"email\", \"auth_user\".\"is_staff\", \"auth_user\".\"is_active\", \"auth_user\".\"date_joined\" FROM \"auth_user\" WHERE \"auth_user\".\"id\" = 1 LIMIT 21",
+            "database_type": "sqlite",
+            "server_version": "3.35.5"
+          },
+          "id": 27,
+          "event": "call",
+          "thread_id": 1
+        },
+        {
+          "static": false,
+          "receiver": {
+            "kind": "req",
+            "object_id": 1982321910592,
+            "value": "<Notitas.views.NotasListView object at 0x000001CD8B97E340>",
+            "name": "self",
+            "class": "Notitas.views.NotasListView"
+          },
+          "id": 8,
+          "event": "call",
+          "thread_id": 1,
+          "defined_class": "Notitas.views.NotasListView",
+          "method_id": "get_queryset",
+          "path": "D:\\Ulises\\#Proyectos\\Proyectos con Django\\Proytecto_Agenda\\myenv\\Agenda\\Notitas\\views.py",
+          "lineno": 23
+        }
+      ],
+      "impactDomain": "Performance",
+      "participatingEvents": {
+        "commonAncestor": {
+          "static": false,
+          "receiver": {
+            "kind": "req",
+            "object_id": 1982321910592,
+            "value": "<Notitas.views.NotasListView object at 0x000001CD8B97E340>",
+            "name": "self",
+            "class": "Notitas.views.NotasListView"
+          },
+          "id": 8,
+          "event": "call",
+          "thread_id": 1,
+          "defined_class": "Notitas.views.NotasListView",
+          "method_id": "get_queryset",
+          "path": "D:\\Ulises\\#Proyectos\\Proyectos con Django\\Proytecto_Agenda\\myenv\\Agenda\\Notitas\\views.py",
+          "lineno": 23
+        }
+      }
+    }
+  ],
+  "checks": [
+    {
+      "rule": {
+        "id": "authz-before-authn",
+        "title": "Authorization performed before authentication",
+        "labels": [
+          "security.authorization",
+          "security.authentication"
+        ],
+        "scope": "http_server_request",
+        "impactDomain": "Security",
+        "enumerateScope": false,
+        "references": {
+          "CWE-863": "https://cwe.mitre.org/data/definitions/863.html"
+        },
+        "description": "Determines when authorization logic is applied to a user identity that has not been properly verified. Because the the user's identity has not been verified yet, the outcome of the authorization check cannot be trusted. A malicious user might be able to get themselves authorized as a different user than they really are - or they may not be logged in at all.",
+        "url": "https://appland.com/docs/analysis/rules-reference.html#authz-before-authn"
+      },
+      "id": "authz-before-authn",
+      "options": {},
+      "scope": "http_server_request",
+      "includeScope": [],
+      "excludeScope": [],
+      "includeEvent": [],
+      "excludeEvent": [],
+      "impactDomain": "Security"
+    },
+    {
+      "rule": {
+        "id": "deprecated-crypto-algorithm",
+        "title": "Deprecated cryptographic algorithm",
+        "description": "---\nrule: deprecated-crypto-algorithm\nname: Deprecated crypto algorithm\ntitle: Deprecated cryptographic algorithm\nreferences:\n  A02:2021: https://owasp.org/Top10/A02_2021-Cryptographic_Failures/\nimpactDomain: Security\nlabels:\n  - crypto.encrypt\n  - crypto.decrypt\n  - crypto.digest\nscope: root\n---\n\nEnsure that cryptographic operations do not use deprecated algorithms.\n",
+        "url": "https://appland.com/docs/analysis/rules-reference.html#deprecated-crypto-algorithm",
+        "labels": [
+          "crypto.encrypt",
+          "crypto.decrypt",
+          "crypto.digest"
+        ],
+        "scope": "root",
+        "enumerateScope": true,
+        "impactDomain": "Security",
+        "references": {
+          "A02:2021": "https://owasp.org/Top10/A02_2021-Cryptographic_Failures/"
+        }
+      },
+      "id": "deprecated-crypto-algorithm",
+      "options": {},
+      "scope": "root",
+      "includeScope": [],
+      "excludeScope": [],
+      "includeEvent": [],
+      "excludeEvent": [],
+      "impactDomain": "Security"
+    },
+    {
+      "rule": {
+        "id": "deserialization-of-untrusted-data",
+        "title": "Deserialization of untrusted data",
+        "labels": [
+          "deserialize.unsafe",
+          "deserialize.safe",
+          "deserialize.sanitize"
+        ],
+        "impactDomain": "Security",
+        "enumerateScope": false,
+        "scope": "http_server_request",
+        "references": {
+          "CWE-502": "https://cwe.mitre.org/data/definitions/502.html",
+          "Ruby Security": "https://docs.ruby-lang.org/en/3.0/doc/security_rdoc.html"
+        },
+        "description": "Finds occurrances of deserialization in which the mechanism employed is known to be unsafe, and the data comes from an untrusted source and hasn't passed through a sanitization mechanism.",
+        "url": "https://appland.com/docs/analysis/rules-reference.html#deserialization-of-untrusted-data"
+      },
+      "id": "deserialization-of-untrusted-data",
+      "options": {},
+      "scope": "http_server_request",
+      "includeScope": [],
+      "excludeScope": [],
+      "includeEvent": [],
+      "excludeEvent": [],
+      "impactDomain": "Security"
+    },
+    {
+      "rule": {
+        "id": "exec-of-untrusted-command",
+        "title": "Execution of untrusted system command",
+        "labels": [
+          "system.exec",
+          "system.exec.safe",
+          "system.exec.sanitize"
+        ],
+        "impactDomain": "Security",
+        "enumerateScope": false,
+        "references": {
+          "CWE-78": "https://cwe.mitre.org/data/definitions/78.html"
+        },
+        "description": "Find occurrances of system command execution in which the command string is not guaranteed to be safe.",
+        "url": "https://appland.com/docs/analysis/rules-reference.html#exec-of-untrusted-command"
+      },
+      "id": "exec-of-untrusted-command",
+      "options": {},
+      "scope": "command",
+      "includeScope": [],
+      "excludeScope": [],
+      "includeEvent": [],
+      "excludeEvent": [],
+      "impactDomain": "Security"
+    },
+    {
+      "rule": {
+        "id": "http-500",
+        "title": "HTTP 500 status code",
+        "description": "Identifies when an HTTP server request has returned a 500 status code. HTTP 500 status code generally indicate an unanticipated problem in the backend that is not handled in a predictable way. 500 status codes are also hard for client code to handle, because they don't indicate any particular problem or suggest a solution.",
+        "url": "https://appland.com/docs/analysis/rules-reference.html#http-500",
+        "labels": [],
+        "scope": "http_server_request",
+        "enumerateScope": false,
+        "impactDomain": "Stability",
+        "references": {
+          "CWE-392": "https://cwe.mitre.org/data/definitions/392.html"
+        }
+      },
+      "id": "http-500",
+      "options": {},
+      "scope": "http_server_request",
+      "includeScope": [],
+      "excludeScope": [],
+      "includeEvent": [],
+      "excludeEvent": [],
+      "impactDomain": "Stability"
+    },
+    {
+      "rule": {
+        "id": "logout-without-session-reset",
+        "title": "Logout without session reset",
+        "scope": "http_server_request",
+        "labels": [
+          "http.session.clear",
+          "security.logout"
+        ],
+        "impactDomain": "Security",
+        "enumerateScope": false,
+        "references": {
+          "CWE-488": "https://cwe.mitre.org/data/definitions/488.html",
+          "OWASP - Session fixation": "https://owasp.org/www-community/attacks/Session_fixation",
+          "Ruby on Rails - Session fixation countermeasures": "https://guides.rubyonrails.org/security.html#session-fixation-countermeasures"
+        },
+        "description": "Determines when a user has been logged out from the application, but the session hasn't been cleared. When the session isn't cleared after logout, the session is vulnerable to a [session fixation attack](https://owasp.org/www-community/attacks/Session_fixation).",
+        "url": "https://appland.com/docs/analysis/rules-reference.html#logout-without-session-reset"
+      },
+      "id": "logout-without-session-reset",
+      "options": {},
+      "scope": "http_server_request",
+      "includeScope": [],
+      "excludeScope": [],
+      "includeEvent": [],
+      "excludeEvent": [],
+      "impactDomain": "Security"
+    },
+    {
+      "rule": {
+        "id": "missing-content-type",
+        "title": "HTTP server request without a Content-Type header",
+        "scope": "http_server_request",
+        "impactDomain": "Stability",
+        "enumerateScope": false,
+        "description": "Finds HTTP server requests that don't provide a `Content-Type` header in the response.",
+        "url": "https://appland.com/docs/analysis/rules-reference.html#missing-content-type"
+      },
+      "id": "missing-content-type",
+      "options": {},
+      "scope": "http_server_request",
+      "includeScope": [],
+      "excludeScope": [],
+      "includeEvent": [],
+      "excludeEvent": [],
+      "impactDomain": "Stability"
+    },
+    {
+      "rule": {
+        "id": "n-plus-one-query",
+        "title": "N plus 1 SQL query",
+        "scope": "command",
+        "impactDomain": "Performance",
+        "enumerateScope": false,
+        "references": {
+          "CWE-1073": "https://cwe.mitre.org/data/definitions/1073.html"
+        },
+        "description": "Finds occurrences of a query being repeated within a loop.",
+        "url": "https://appland.com/docs/analysis/rules-reference.html#n-plus-one-query"
+      },
+      "id": "n-plus-one-query",
+      "options": {
+        "warningLimit": 5,
+        "errorLimit": 10
+      },
+      "scope": "command",
+      "includeScope": [],
+      "excludeScope": [],
+      "includeEvent": [],
+      "excludeEvent": [],
+      "impactDomain": "Performance"
+    },
+    {
+      "rule": {
+        "id": "secret-in-log",
+        "title": "Secret in log",
+        "labels": [
+          "secret",
+          "log"
+        ],
+        "scope": "root",
+        "impactDomain": "Security",
+        "enumerateScope": true,
+        "references": {
+          "CWE-532": "https://cwe.mitre.org/data/definitions/532.html"
+        },
+        "description": "Identifies when a known or assumed secret is written to a log. Logs are often transported into other systems that are treated with lesser security - such as backups. Therefore, secrets written into log files are more likely to be leaked or discovered by cyber-attackers.",
+        "url": "https://appland.com/docs/analysis/rules-reference.html#secret-in-log"
+      },
+      "id": "secret-in-log",
+      "options": {},
+      "scope": "root",
+      "includeScope": [],
+      "excludeScope": [],
+      "includeEvent": [],
+      "excludeEvent": [],
+      "impactDomain": "Security"
+    },
+    {
+      "rule": {
+        "id": "too-many-joins",
+        "title": "Too many joins",
+        "description": "Verifies that the number of joins in SQL queries does not exceed a threshold.",
+        "url": "https://appland.com/docs/analysis/rules-reference.html#too-many-joins",
+        "labels": [],
+        "enumerateScope": false,
+        "impactDomain": "Performance",
+        "references": {
+          "CWE-1049": "https://cwe.mitre.org/data/definitions/1049.html"
+        }
+      },
+      "id": "too-many-joins",
+      "options": {
+        "warningLimit": 5,
+        "excludeTables": [
+          {
+            "match": {},
+            "ignoreCase": false
+          },
+          {
+            "equal": "information_schema",
+            "ignoreCase": false
+          }
+        ]
+      },
+      "scope": "command",
+      "includeScope": [],
+      "excludeScope": [],
+      "includeEvent": [],
+      "excludeEvent": [],
+      "impactDomain": "Performance"
+    },
+    {
+      "rule": {
+        "id": "too-many-updates",
+        "title": "Too many SQL and RPC updates performed in one command",
+        "scope": "command",
+        "enumerateScope": false,
+        "impactDomain": "Maintainability",
+        "references": {
+          "CWE-1048": "https://cwe.mitre.org/data/definitions/1048.html"
+        },
+        "description": "Verifies that the number of SQL and RPC updates performed by a command does not exceed a threshold.",
+        "url": "https://appland.com/docs/analysis/rules-reference.html#too-many-updates"
+      },
+      "id": "too-many-updates",
+      "options": {
+        "warningLimit": 20
+      },
+      "scope": "command",
+      "includeScope": [],
+      "excludeScope": [],
+      "includeEvent": [],
+      "excludeEvent": [],
+      "impactDomain": "Maintainability"
+    },
+    {
+      "rule": {
+        "id": "unauthenticated-encryption",
+        "title": "Unauthenticated encryption",
+        "description": "Ensures that encryption operations use authenticated encryption.",
+        "url": "https://appland.com/docs/analysis/rules-reference.html#unauthenticated-encryption",
+        "labels": [
+          "crypto.encrypt",
+          "crypto.set_auth_data"
+        ],
+        "enumerateScope": true,
+        "impactDomain": "Security",
+        "references": {
+          "A02:2021": "https://owasp.org/Top10/A02_2021-Cryptographic_Failures/"
+        }
+      },
+      "id": "unauthenticated-encryption",
+      "options": {},
+      "scope": "command",
+      "includeScope": [],
+      "excludeScope": [],
+      "includeEvent": [],
+      "excludeEvent": [],
+      "impactDomain": "Security"
+    },
+    {
+      "rule": {
+        "id": "update-in-get-request",
+        "title": "Data update performed in GET or HEAD request",
+        "scope": "http_server_request",
+        "enumerateScope": true,
+        "labels": [
+          "audit"
+        ],
+        "impactDomain": "Maintainability",
+        "description": "Finds SQL updates that are performed in an HTTP server `GET` request.",
+        "url": "https://appland.com/docs/analysis/rules-reference.html#update-in-get-request"
+      },
+      "id": "update-in-get-request",
+      "options": {
+        "_queryInclude": [
+          {},
+          {}
+        ],
+        "_queryExclude": []
+      },
+      "scope": "http_server_request",
+      "includeScope": [],
+      "excludeScope": [],
+      "includeEvent": [],
+      "excludeEvent": [],
+      "impactDomain": "Maintainability"
+    }
+  ],
+  "summary": {
+    "numAppMaps": 1,
+    "numChecks": 13,
+    "rules": [
+      "authz-before-authn",
+      "deprecated-crypto-algorithm",
+      "deserialization-of-untrusted-data",
+      "exec-of-untrusted-command",
+      "http-500",
+      "logout-without-session-reset",
+      "missing-content-type",
+      "n-plus-one-query",
+      "secret-in-log",
+      "too-many-joins",
+      "too-many-updates",
+      "unauthenticated-encryption",
+      "update-in-get-request"
+    ],
+    "ruleLabels": [
+      "audit",
+      "crypto.decrypt",
+      "crypto.digest",
+      "crypto.encrypt",
+      "crypto.set_auth_data",
+      "deserialize.safe",
+      "deserialize.sanitize",
+      "deserialize.unsafe",
+      "http.session.clear",
+      "log",
+      "secret",
+      "security.authentication",
+      "security.authorization",
+      "security.logout",
+      "system.exec",
+      "system.exec.safe",
+      "system.exec.sanitize"
+    ],
+    "numFindings": 2,
+    "appMapMetadata": {
+      "labels": [],
+      "apps": [],
+      "clients": [
+        {
+          "name": "appmap",
+          "url": "https://github.com/applandinc/appmap-python"
+        }
+      ],
+      "frameworks": [
+        {
+          "name": "Django",
+          "version": "3.2.3"
+        }
+      ],
+      "git": [
+        {
+          "repository": "https://github.com/ulisespallares888/Agenda.git",
+          "branch": "master",
+          "commit": "64e5f45e125a8a6d771aff07e039a1ef8f692d4e",
+          "status": [
+            "M .gitignore",
+            "M Agenda/__pycache__/settings.cpython-39.pyc",
+            "M Agenda/__pycache__/urls.cpython-39.pyc",
+            "M Agenda/__pycache__/wsgi.cpython-39.pyc",
+            "M Agenda/settings.py",
+            "M Agenda_contactos/__pycache__/urls.cpython-39.pyc",
+            "M Notitas/__pycache__/models.cpython-39.pyc",
+            "M Notitas/__pycache__/urls.cpython-39.pyc",
+            "M Notitas/__pycache__/views.cpython-39.pyc",
+            "M Notitas/migrations/__pycache__/0005_notitas_fecha_creacion.cpython-39.pyc",
+            "M db.sqlite3",
+            "?? .vscode/",
+            "?? appmap.yml",
+            "?? tmp/"
+          ]
+        }
+      ],
+      "languages": [
+        {
+          "name": "python",
+          "engine": "CPython",
+          "version": "3.9.7"
+        }
+      ],
+      "recorders": [
+        {
+          "name": "record_requests"
+        }
+      ],
+      "testStatuses": [],
+      "exceptions": []
+    }
+  }
+}
