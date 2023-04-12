@@ -1,6 +1,0 @@
-[
-  {
-    "caller": "HTTP server requests->GET /static/css/crud.css",
-    "callee": "<templates>/UnknownSource#render"
-  }
-]

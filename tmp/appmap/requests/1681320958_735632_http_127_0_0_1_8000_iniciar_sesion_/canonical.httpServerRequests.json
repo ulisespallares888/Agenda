@@ -1,7 +1,0 @@
-[
-  {
-    "route": "POST /iniciar_sesion/",
-    "parameters": "(csrfmiddlewaretoken,txtusuario,txtpassword)",
-    "status": 302
-  }
-]

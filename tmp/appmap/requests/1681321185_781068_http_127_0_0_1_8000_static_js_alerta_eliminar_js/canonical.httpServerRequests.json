@@ -1,7 +1,0 @@
-[
-  {
-    "route": "GET /static/js/alerta_eliminar.js",
-    "parameters": "()",
-    "status": 404
-  }
-]
