@@ -15,8 +15,8 @@
         
         <div class="class content">
         <a class="navbar-brand" href="home"><strong>Agenda</strong></a>
-        <a class="navbar-brand" href="home" >Conactos</a>
-        <a class="navbar-brand" href="lista_notas">Notas</a>
+        <!-- <a class="navbar-brand" href="home" >Conactos</a>
+        <a class="navbar-brand" href="lista_notas">Notas</a> -->
         </div>
       
         <div class="mx-left" style="width: 120px;" class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -29,7 +29,11 @@
                 {{user.username}}
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li><a class="dropdown-item" href="accounts/logout">Salir</a></li>
+                <li> 
+                  <a class="dropdown-item" href="home" >Conactos</a>
+                  <a class="dropdown-item" href="lista_notas">Notas</a>
+                  <a class="dropdown-item" href="accounts/logout">Salir</a>
+                </li>
                   
               </ul>
 

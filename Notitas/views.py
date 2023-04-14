@@ -21,7 +21,7 @@ class NotasListView(ListView):
     context_object_name = 'notatias'
 
     def get_queryset(self):
-        return notitas.objects.filter(propietario_id = self.request.user.id).order_by('fecha_creacion').reverse() 
+        return notitas.objects.filter(propietario_id = self.request.user.id).order_by('fecha_creacion').reverse()
     
     
 ##### views.py #####

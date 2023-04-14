@@ -50,7 +50,7 @@ th{
 
   :root {
     --cardWidth: 240px;
-    --cardHeight: 240px;
+     --cardHeight: 240px;
     --cardMargin: 16px;
   }
   
@@ -82,3 +82,4 @@ th{
     
   }
   
+ 

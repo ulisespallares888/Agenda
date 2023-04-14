@@ -1,6 +1,0 @@
-language: python
-name: Agenda
-packages:
-- path: Agenda
-- path: Notitas
-- path: Agenda_contactos
