@@ -11,7 +11,7 @@ from django.contrib.auth import SESSION_KEY, authenticate, login
 from django.utils.decorators import method_decorator
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
-
+from django.views.decorators.csrf import csrf_protect
 
 
 @method_decorator(login_required, name='dispatch')
@@ -43,5 +43,41 @@ def eliminar_nota(request, id_nota):
     nota.delete()
     messages.success(request, 'Nota eliminada')
     return redirect('lista_notas')
+@csrf_protect
+@login_required
+def editar_nota(request,id_nota):
+    titulo = request.POST['recipient-name']
+    contenido = request.POST['message-text']
+    if titulo == "" or contenido == "":
+        messages.warning(request, 'Existen campos vacios')
+        return render(request,"crud_notitas.html")
+    else:
 
+        nota_edit = notitas.objects.get(id=id_nota)
+        nota_edit.titulo = titulo
+        nota_edit.contenido = contenido
+        nota_edit.save()
+        messages.success(request, "Modificación exitosa")
+        return render(request,"crud_notitas.html")
 
+"""@login_required
+def editarcontacto(request,id):
+    nombre = request.POST['txtnombre'].capitalize()
+    apellido = request.POST['txtapellido'].capitalize()
+    telefono = request.POST['txttelefono']
+    email = request.POST['txtemail']
+    if nombre == '' or apellido == '' or email == '' or telefono == 0:
+        messages.warning(request, 'Existen campos vacios')
+        contacto_edit = contacto.objects.get(id=id)
+        return render(request,"edicioncontacto.html",{"id": contacto_edit})
+        
+    else:
+        contacto_edit = contacto.objects.get(id=id)
+        contacto_edit.nombre = nombre
+        contacto_edit.apellido = apellido
+        contacto_edit.telefono = telefono
+        contacto_edit.email = email
+        contacto_edit.save()
+        texto = '{} ha sido actualizado'
+        messages.success(request, texto.format(contacto_edit.nombre))
+        return redirect('home')"""

@@ -9,5 +9,7 @@ urlpatterns = [
     path('lista_notas',NotasListView.as_view(),name='lista_notas'),
     path('crear_nota',crear_nota,name='crear_nota'),
     path('eliminar_nota/<int:id_nota>',eliminar_nota,name='eliminar_nota'),
+    path('editar_nota/<int:id_nota>',editar_nota,name='editar_nota'),
     path('accounts/',include('django.contrib.auth.urls')),
+    
     ]
