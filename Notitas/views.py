@@ -11,7 +11,7 @@ from django.contrib.auth import SESSION_KEY, authenticate, login
 from django.utils.decorators import method_decorator
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
-from django.views.decorators.csrf import csrf_protect
+from django.views.decorators.csrf import csrf_protect, csrf_exempt
 
 
 @method_decorator(login_required, name='dispatch')
@@ -43,14 +43,15 @@ def eliminar_nota(request, id_nota):
     nota.delete()
     messages.success(request, 'Nota eliminada')
     return redirect('lista_notas')
-@csrf_protect
+
+@csrf_exempt
 @login_required
 def editar_nota(request,id_nota):
-    titulo = request.POST['recipient-name']
-    contenido = request.POST['message-text']
+    titulo = request.POST.get('recipient-name',False)  
+    contenido = request.POST.get('message-text',False)
     if titulo == "" or contenido == "":
         messages.warning(request, 'Existen campos vacios')
-        return render(request,"crud_notitas.html")
+        return redirect('lista_notas')
     else:
 
         nota_edit = notitas.objects.get(id=id_nota)
@@ -58,7 +59,7 @@ def editar_nota(request,id_nota):
         nota_edit.contenido = contenido
         nota_edit.save()
         messages.success(request, "Modificación exitosa")
-        return render(request,"crud_notitas.html")
+        return redirect('lista_notas')
 
 """@login_required
 def editarcontacto(request,id):

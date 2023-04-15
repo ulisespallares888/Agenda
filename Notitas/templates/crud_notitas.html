@@ -83,7 +83,7 @@
                     
                   <!-- Button trigger modal -->
                   
-                  <button  type="button" class="btn btn-primary " onclick="myFunction({{nota.id}},'{{nota.titulo}}','{{ nota.contenido}}')"  data-toggle="modal" data-target="#exampleModalLong"  >
+                  <button  type="button" class="btn btn-primary " onclick="myFunction({{nota.id}},'{{nota.titulo}}','{{ nota.contenido}}','{{ csrf_token }}')"  data-toggle="modal" data-target="#exampleModalLong"  >
                     <strong>
                     ≡
                     </strong>
@@ -120,8 +120,8 @@
         </button>
       </div>
       <div class="modal-body">
-        <form action="editar_nota/{{ nota.id }}" method="POST"> {% csrf_token %}
-          
+        <form action="editar_nota/{{ nota.id }}" method="POST" >   {% csrf_token %}
+       
           <div class="form-group">
             
             <input type="text" class="form-control" id="recipient-name" name="recipient-name">
